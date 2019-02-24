@@ -1,0 +1,9 @@
+body {
+    @include fonte-texte($couleur__fonte);
+}
+
+.chargement{
+    &>p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}

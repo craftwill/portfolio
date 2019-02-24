@@ -1,0 +1,17 @@
+{
+    "name": "production-jeu-presentation",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "dependencies": {
+        "express": "^4.15.2",
+        "socket.io": "^2.1.1"
+    },
+    "engines": {
+        "node": "8.10.x"
+    },
+    "scripts": {
+        "start": "node app.js"
+    },
+    "author": "William Gingras"
+}
