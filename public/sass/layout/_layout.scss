@@ -2,106 +2,140 @@
     margin: 0;
     padding: 0;
 }
-
-html,
-body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    border: 0;
-    display: block;
-    z-index: -1;
-}
 body{
     overflow-x: hidden;
 }
-canvas{
+.p5Canvas{
     position:fixed; 
     left:0px; 
     top:0px;
     opacity: 0.1;
+    pointer-events: none;
+    z-index: -10;
 }
-main{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 15px;
-}
-header{
-    display: flex;
-    justify-content: center;
-    opacity: .8;
-    flex: 1 1 100%;
-}
-header>h1{
-    font-size: 63px;
-}
-content{
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 100%;
-    min-height: 400px;
-    width: 100%;
-}
-content>div{
-    display: flex;
-    flex: 1 1 100%;
-    height: 100%;
-    justify-content: center;
-    color: black;
-    opacity: 0.7;
-    margin: 15px;
-    min-height: 300px;
-    /*background-color: whitesmoke;*/
-}
-content>div:nth-child(1){
-    background-color: transparent;
-}
-content>div:nth-child(2){
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-content>div:nth-child(2) div:nth-child(2){
-    display: flex;
-    margin: 35px;
-    margin-top: -5px;
-    margin-left: 0;
-    font-size: 35px;
-}
-content>div:nth-child(2) div:nth-child(1) h3{
-    font-size: 26px;
-}
-content>div:nth-child(2) div:nth-child(1) p{
-    padding-left: 15px;
-}
-content>div:nth-child(2) div:nth-child(1){
-    margin-top: 114px;
-    margin-right: 35px;
-    font-size: 13px;
-}
-content>div:nth-child(3){
-
-}
-content>div:nth-child(4){
-
-}
-
-// MEDIAS
-
-// Mobile
-@media (max-width: 768px) {
-    content>div:nth-child(2){
-        flex-direction: column;
+.conteneur{
+    display: grid;
+    grid-template: 
+    "header"
+    "content"
+    "footer";
+    &>.boite{
+        
+    }
+    margin: {
+        left: 15vw;
+        right: 15vw;
     }
 }
+.header{
+    display: flex;
+    grid-area: "header";
+    justify-content: center;
+    opacity: 1;
+    flex: 1 1 100%;
+    font-size: 33px;
+}
+.content{
+    flex: grid;
+    grid-template: "";
+    grid-area: "content";
+    &>.boiteContent{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        opacity: 1;
+        min-height: 200px;
+        width: 100%;
+        margin: {
+            top: 25px;
+            bottom: 25px;
+        }
 
+    }
+    &>.espace{
+        grid-area: "espace";
+        height: 300px;
+    }
+    &>.portrait{
+        grid-area: "portrait";
+        &>img{
+            max-width: 250px;
+            max-height: 333px;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+        }
+        &>p{
+            font-size: 22px;
+        }
+    }
+    &>.description{
+        grid-area: "description";
+        &>h2{
+            font-size: 25px;
+        }
+        &>p{
+            padding: {
+                top: 15px;
+            }
+        }
+    }
+    &>.projets{
+        grid-area: "projets";
+        &>h2{
+            font-size: 25px;
+        }
+        &>.conteneurProjets{
+            display: grid;
+            grid-template: auto auto;
+            width: 90%;
+            margin: {
+                top: 15px;
+            }
+            &>div{
+                width: 100%;
+                min-height: 150px;
+                &:hover{
+                    &>p{
+                        opacity: 1;
+                    }
+                    &>img{
+                        opacity: 0.3;
+                    }
+                }
+                &>img{
+                    opacity: 1;
+                    width: 100%;
+                    transition: opacity 0.4s;
+                }
+                &>p{
+                    font-size: 22px;
+                    opacity: 0;
+                    transition: opacity 0.4s;
+                }
+            }
+        }
+    }
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    grid-area: "footer";
+}
+//////////////////////////////////////
+/////////////// MEDIAS ///////////////
+//////////////////////////////////////
+// Mobile
+@media (max-width: 768px) {
+
+}
 // Ipad
 @media (min-width: 769px) and (max-width: 1024px) {
     
 }
-
 // Grand Écran
 @media (min-width: 1025px) and (max-width: 2075px) {
     

@@ -11,34 +11,42 @@
 </head>
 
 <body>
-       
-    <main>
-        <header>
+    <main class="conteneur">
+        <header class="boite header">
             <h1>Portfolio</h1>
         </header>
+       <content class="boite content conteneurContent">
+           <div class="boiteContent espace">
 
-       <content>
-           <div>
-               
            </div>
-           <div>
-               <div>
-                   <h3>Description</h3>
-                   <p>ADNSADSAUEAHIO EHAUESH DUKDIBnADNSADSAUEAHIO EHAUESH DUKDIBn</p>
-                   <p>ADNSADSAUEAHIO EHAUESH DUKDIBn ADNSADSAUEAHIO EHAUESH DUKDIBn</p>
-                   <p>ADNSADSAUEAHIO EHAUESH DUKDIBn ADNSADSAUEAHIO EHAUESH DUKDIBn</p>
+           <div class="boiteContent portrait">
+                <img src="images/portrait.jpg" alt="portrait">
+                <p>William Gingras</p>
+           </div>
+           <div class="boiteContent description">
+                <h2>Description</h2>
+                <p>Je suis passionné à tout ce qui touche à la programmation, ce qui explique les nombreuses heures que je passe à m’informer sur des sujets de tout genres reliées à la programmation. Je suis une personne créative malgré tout, ce qui me permet de bien m’entendre avec les artistes. J’ai de l’expérience dans la création de jeux en Unity, Javascript et un peu en Java avec OpenGL. Je suis présentement aux études et je cherche à acquérir de l’expérience professionnelle dans mon domaine. Pour la suite des choses, je pense faire un BAC en génie logiciel après ma technique. </p>
+                <p>J’ai eu la chance de travailler chez Creo inc. pendant l’été grâce à une subvention d’Iscola, ce qui m’a permis de gagner une expérience précieuse et de comprendre comment une vraie compagnie gère la production d’un jeu en équipe. Travailler chez Creo m’a également fait voir comment un programmeur doit évaluer le temps de production nécessaire à la production des fonctionnalités pour ensuite bien le communiquer à ses coéquipiers.</p>
+           </div>
+           <div class="boiteContent projets">
+               <h2>Projets</h2>
+               <div class="conteneurProjets">
+                    <div class="boiteProjet p1">
+                        <p>projet1</p>
+                        <img src="images/projets/projet_01.png" alt="">
+                    </div>
+                    <div class="boiteProjet p2">
+                        <p>projet2</p>
+                        <img src="images/projets/projet_01.png" alt="">
+                    </div>
                </div>
-                <div>
-                   <p>William Gingras</p>
-               </div>
-           </div>
-           <div>
-               <p>contenu3</p>
-           </div>
-           <div>
-               <p>contenu4</p>
            </div>
        </content>
+       <footer class="boite footer">
+            <div>
+                <p>footer</p>
+            </div>
+       </footer>
     </main>
     <!-- Socket.io -->
     <script src="/socket.io/socket.io.js"></script>
