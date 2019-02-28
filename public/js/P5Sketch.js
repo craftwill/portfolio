@@ -42,7 +42,7 @@ export class P5Sketch {
                             this.y = p.random(-200, -100);
                     }
                     this.show = function(){
-                        p.stroke(210 + this.z, 210 + this.z, 210 + this.z);
+                        p.stroke(210 + this.z, 210 - this.z, 210 - this.z);
                         p.line(this.x , this.y, this.x, this.y+this.longueur);
                     }
                 }
