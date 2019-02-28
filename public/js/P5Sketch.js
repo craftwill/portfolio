@@ -43,7 +43,7 @@ export class P5Sketch {
                     }
                     this.show = function(){
                         p.stroke(210 + this.z, 210 + this.z, 210 + this.z);
-                        p.line(this.x, this.y, this.x, this.y+this.longueur);
+                        p.line(this.x , this.y, this.x, this.y+this.longueur);
                     }
                 }
 

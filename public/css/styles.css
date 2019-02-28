@@ -568,30 +568,87 @@ body {
 }
 
 .content > .projets > .conteneurProjets > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
   width: 100%;
-  min-height: 140px;
 }
 
-.content > .projets > .conteneurProjets > div:hover > p {
+.content > .projets > .conteneurProjets > div::before {
+  display: block;
+  opacity: 0;
+  position: relative;
+  color: white;
+  z-index: 50;
+  top: 54%;
+  left: 0%;
+  height: 0px;
+  font-size: 15px;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  content: "Appuyer pour voir";
+}
+
+.content > .projets > .conteneurProjets > div:hover {
+  cursor: pointer;
+}
+
+.content > .projets > .conteneurProjets > div:hover > .titre_projet {
   opacity: 1;
 }
 
 .content > .projets > .conteneurProjets > div:hover > img {
-  opacity: 0.3;
+  -webkit-filter: brightness(33%);
+          filter: brightness(33%);
+}
+
+.content > .projets > .conteneurProjets > div:hover::before {
+  opacity: 1;
 }
 
 .content > .projets > .conteneurProjets > div > img {
-  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
   width: 100%;
+  -webkit-transition: -webkit-filter 0.4s;
+  transition: -webkit-filter 0.4s;
+  transition: filter 0.4s;
+  transition: filter 0.4s, -webkit-filter 0.4s;
+}
+
+.content > .projets > .conteneurProjets > div > .titre_projet {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 19px;
+  opacity: 1;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
 
-.content > .projets > .conteneurProjets > div > p {
-  font-size: 22px;
-  opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+.content > .projets > .conteneurProjets > div > .description_projet {
+  position: relative;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  color: white;
+  z-index: 50;
 }
 
 .footer {
