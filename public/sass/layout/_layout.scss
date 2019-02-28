@@ -91,13 +91,13 @@ body{
         &>.conteneurProjets{
             display: grid;
             grid-template: auto auto;
-            width: 90%;
+            width: 95%;
             margin: {
                 top: 15px;
             }
             &>div{
                 width: 100%;
-                min-height: 150px;
+                min-height: 140px;
                 &:hover{
                     &>p{
                         opacity: 1;
@@ -130,7 +130,12 @@ body{
 //////////////////////////////////////
 // Mobile
 @media (max-width: 768px) {
-
+    .conteneur{
+        margin: {
+            left: 5vw;
+            right: 5vw;
+        }
+    }
 }
 // Ipad
 @media (min-width: 769px) and (max-width: 1024px) {

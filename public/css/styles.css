@@ -563,13 +563,13 @@ body {
   display: -ms-grid;
   display: grid;
   grid-template: auto auto;
-  width: 90%;
+  width: 95%;
   margin-top: 15px;
 }
 
 .content > .projets > .conteneurProjets > div {
   width: 100%;
-  min-height: 150px;
+  min-height: 140px;
 }
 
 .content > .projets > .conteneurProjets > div:hover > p {
@@ -602,6 +602,13 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   grid-area: "footer";
+}
+
+@media (max-width: 768px) {
+  .conteneur {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 }
 
 body {
