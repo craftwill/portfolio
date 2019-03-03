@@ -55,7 +55,7 @@ export class P5Sketch {
             }
             p.draw = function () {
                 p.background(255, 255, 255);
-                p.ellipse(window.innerWidth / 2, window.innerHeight / 2, 40, 40);
+                //p.ellipse(window.innerWidth / 2, window.innerHeight / 2, 40, 40);
                 for(let x = 0; x < p.drops.length; x++){
                     let d = p.drops[x];
                     d.fall();

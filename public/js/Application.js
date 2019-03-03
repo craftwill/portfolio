@@ -1,6 +1,7 @@
 import { Utils } from './Utils.js';
 import { P5Sketch } from "./P5Sketch.js";
 import { SocketManager } from "./SocketManager.js";
+import { ProjetsManager } from './ProjetsManager.js';
 
 (function(){
     
@@ -8,5 +9,9 @@ import { SocketManager } from "./SocketManager.js";
     let p5Sketch = new P5Sketch();
     // Socket manager
     let sManager = new SocketManager();
-    
+    // Projets manager
+    let pManager = new ProjetsManager();
+
+    console.log(pManager.getProjetParNom("projet01_titreTest"));
+
 })();
