@@ -416,8 +416,8 @@ template {
 @-webkit-keyframes animApparitionImage {
   from {
     opacity: 0.0;
-    -webkit-transform: translateX(-28vw);
-            transform: translateX(-28vw);
+    -webkit-transform: translateX(-10vw);
+            transform: translateX(-10vw);
   }
   to {
     opacity: 1.0;
@@ -429,8 +429,8 @@ template {
 @keyframes animApparitionImage {
   from {
     opacity: 0.0;
-    -webkit-transform: translateX(-28vw);
-            transform: translateX(-28vw);
+    -webkit-transform: translateX(-10vw);
+            transform: translateX(-10vw);
   }
   to {
     opacity: 1.0;
@@ -440,8 +440,8 @@ template {
 }
 
 .animImage {
-  -webkit-animation: animApparitionImage 0.8s forwards;
-          animation: animApparitionImage 0.8s forwards;
+  -webkit-animation: animApparitionImage 0.7s forwards;
+          animation: animApparitionImage 0.7s forwards;
 }
 
 * {
@@ -568,6 +568,7 @@ body {
 }
 
 .content > .projets > .conteneurProjets > div {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

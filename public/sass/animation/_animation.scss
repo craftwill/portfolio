@@ -32,7 +32,7 @@
 @keyframes animApparitionImage{
     from{
         opacity: 0.0;
-        transform: translateX(-28vw);
+        transform: translateX(-10vw);
     }
     to{
         opacity: 1.0;
@@ -41,5 +41,5 @@
 }
 
 .animImage{
-    animation: animApparitionImage 0.8s forwards;
+    animation: animApparitionImage 0.7s forwards;
 }

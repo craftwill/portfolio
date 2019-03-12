@@ -10,7 +10,10 @@ export class Utils{
         else
             return Math.floor(min+Math.random()*max) * (random(1,2)==1) ? -1 : 1;
     }
-    static getScrollX(){
+    static getScrollY(){
         return window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    }
+    static mediaMatch(largeurMin){
+        return window.matchMedia("(min-width: "+largeurMin+"px)").matches;
     }
 }
