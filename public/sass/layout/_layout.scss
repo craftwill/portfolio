@@ -59,6 +59,7 @@ body{
         height: 300px;
     }
     &>.portrait{
+        opacity: 0;
         grid-area: "portrait";
         &>img{
             max-width: 250px;

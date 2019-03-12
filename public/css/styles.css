@@ -524,6 +524,7 @@ body {
 }
 
 .content > .portrait {
+  opacity: 0;
   grid-area: "portrait";
 }
 

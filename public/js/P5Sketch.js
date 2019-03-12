@@ -1,3 +1,5 @@
+import { ArbreFractal } from "./ArbreFractal.js";
+
 export class P5Sketch {
     constructor() {
         this.p5 = new p5(function (p) {
@@ -47,20 +49,26 @@ export class P5Sketch {
                     }
                 }
 
+                // Créationd des gouttes
                 this.drops = [];
                 for(var x = 0; x < 100; x++){
                     this.drops.push(new Drop());
                 }
 
+                this.arbreFractal = new ArbreFractal(p); 
+
             }
             p.draw = function () {
                 p.background(255, 255, 255);
                 //p.ellipse(window.innerWidth / 2, window.innerHeight / 2, 40, 40);
-                for(let x = 0; x < p.drops.length; x++){
+                // Rendu des gouttes
+                /*for(let x = 0; x < p.drops.length; x++){
                     let d = p.drops[x];
                     d.fall();
                     d.show();
-                }
+                }*/
+                // Rendu de l'arbre
+                p.arbreFractal.dessinerArbre();
             }
         }, "sketch1");
     }

@@ -13,7 +13,7 @@ import { AnimImages } from "./AnimImages.js";
     // Projets manager
     let pManager = new ProjetsManager();
     // Animation des projets
-    let animProjets = new AnimImages(document.querySelector(".conteneurProjets"));
+    // let animProjets = new AnimImages(document.querySelector(".conteneurProjets"));
 
     console.log(pManager.getProjetParNom("projet01_titreTest"));
 
