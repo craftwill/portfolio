@@ -4,7 +4,8 @@ export class P5Sketch {
     constructor() {
         this.p5 = new p5(function (p) {
             p.setup = function () {
-                p.createCanvas(600, 600, p.P3D);
+                // this.peasyCam = new Dw.EasyCam(this, 100);
+                p.createCanvas(600, 600, p.P2D);
                 var
                     htmlCanvas = document.getElementById('defaultCanvas0'),
                     context = htmlCanvas.getContext('2d'),

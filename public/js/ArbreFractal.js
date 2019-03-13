@@ -143,9 +143,9 @@ export class ArbreFractal {
         let p = this.p;
         this.decX = window.innerWidth / 2;
         this.decY = window.innerHeight / 2;
-        for(let x = 0; x < this.feuilles.length; x++){
+        /* for(let x = 0; x < this.feuilles.length; x++){
             this.feuilles[x].dessiner();
-        }
+        } */
         for(let x = 0; x < this.branches.length; x++){
             this.branches[x].dessiner();
         }
