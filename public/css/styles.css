@@ -457,7 +457,7 @@ body {
   position: fixed;
   left: 0px;
   top: 0px;
-  opacity: 0.5;
+  opacity: 0.17;
   pointer-events: none;
   z-index: -10;
 }
@@ -524,7 +524,7 @@ body {
 }
 
 .content > .portrait {
-  opacity: 0;
+  opacity: 1;
   grid-area: "portrait";
 }
 

@@ -6,15 +6,8 @@ export class P5Sketch {
             p.setup = function () {
                 // this.peasyCam = new Dw.EasyCam(this, 100);
                 p.createCanvas(600, 600, p.P2D);
-                var
-                    htmlCanvas = document.getElementById('defaultCanvas0'),
-                    context = htmlCanvas.getContext('2d'),
-
-                    relativeX = 150,
-                    relativeY = 150,
-
-                    mvmtX = 0,
-                    mvmtY = 0;
+                var htmlCanvas = document.getElementById('defaultCanvas0');
+                var context = htmlCanvas.getContext('2d');
 
                 htmlCanvas.style = "";
                 initialize();

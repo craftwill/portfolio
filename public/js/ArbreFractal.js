@@ -1,9 +1,18 @@
+import { Utils } from './Utils.js';
+
+const TAILLE_BRANCHES = Utils.random(10, 13);
+const LONGUEUR_BRANCHES = Utils.random(1.4, 1.7);
+const NB_FEUILLES = Utils.random(300, 350);
+const FACTEUR_POUSSE = Utils.random(50, 75);
+
+console.log(FACTEUR_POUSSE);
+
 /* Une feuille représente un point vers lequel les branches vont pousser */
 class Feuille {
-    constructor(p){
+    constructor(p, decX, decY){
         this.p = p;
         this.manger = false;
-        this.pos = p.createVector(p.random(p.width), p.random(p.height - 150))
+        this.pos = p.createVector(p.random(decX+(decX/2)) + (decX-(decX/2))/2 - decX, p.random(decY) + decY/2 + decY/12)
     }
     dessiner(){
         let p = this.p;
@@ -17,22 +26,24 @@ class Branche {
     constructor(p, parent, pos, dir){
         this.p = p;
         this.parent = parent;
+        this.generation = (parent!=null) ? parent.generation + 1 : 1;
         this.pos = pos;
         this.dir = dir; // Direction de la branche
         this.dirOriginale = dir.copy(); 
         this.compte = 0;
-        this.longueur = 5;
+        this.longueur = LONGUEUR_BRANCHES;
     }
     reinitialiser(){
         this.dir = this.dirOriginale.copy();
         this.compte = 0;
     }
-    dessiner(){
+    dessiner(decX, decY){
         let p = this.p;
         if(this.parent != null){
             p.stroke(0);
-            p.strokeWeight(3);
-            p.line(this.pos.x, this.pos.y, this.parent.pos.x, this.parent.pos.y);
+            p.strokeWeight(Math.max(TAILLE_BRANCHES - (this.generation/(TAILLE_BRANCHES+2)), 0.2));
+            let decYFinal = decY/8.5;
+            p.line(this.pos.x + decX, this.pos.y + decYFinal, this.parent.pos.x + decX, this.parent.pos.y + decYFinal);
         }
     }
     prochaineBranche(){
@@ -50,21 +61,26 @@ export class ArbreFractal {
         this.p = p; // Objet p5 utilisé pour le rendu du sketch P5JS
         this.dist_max = 150;
         this.dist_min = 10;
+        this.nbFrames = 0;
         this.nbPousse = 0;
-        this.nbPousseMax = 90;
+        this.nbPousseMax = 900;
         this.arreterDePousser = false;
+        this.racine = null;
         this.feuilles = [];
         this.branches = [];
+        this.decX = window.innerWidth / 2;
+        this.decY = window.innerHeight / 2;
 
-        for(let x = 0; x < 300; x++){
-            this.feuilles.push(new Feuille(p));
+        for(let x = 0; x < NB_FEUILLES; x++){
+            this.feuilles.push(new Feuille(p, this.decX, this.decY));
         }
 
-        let pos = p.createVector(p.width/2, p.height);
+        let pos = p.createVector(0, this.decY + this.decY/1.1);
         let dir = p.createVector(0, -1); // Pointe vers le haut
         let racine = new Branche(p, null, pos, dir);
 
         this.branches.push(racine);
+        this.racine = racine;
 
         var actuel = racine;
         var trouver = false;
@@ -100,6 +116,8 @@ export class ArbreFractal {
             let branchePlusProche = null;
             let record = 1000000;
             for(let y = 0; y < this.branches.length; y++){
+                if(p.random(1, 100) < FACTEUR_POUSSE)
+                    continue;
                 let branche = this.branches[y];
                 let d = p5.Vector.dist(feuille.pos, branche.pos);
                 if(d < this.dist_min){
@@ -142,14 +160,17 @@ export class ArbreFractal {
     dessinerArbre(){
         let p = this.p;
         this.decX = window.innerWidth / 2;
-        this.decY = window.innerHeight / 2;
-        /* for(let x = 0; x < this.feuilles.length; x++){
-            this.feuilles[x].dessiner();
-        } */
+        this.decY = window.innerHeight / 2 - 50;
+        //for(let x = 0; x < this.feuilles.length; x++){
+        //    this.feuilles[x].dessiner();
+        //}
         for(let x = 0; x < this.branches.length; x++){
-            this.branches[x].dessiner();
+            let b = this.branches[x];
+            //b.pos = p.createVector();
+            b.dessiner(this.decX, this.decY);
         }
-        if(!this.arreterDePousser)
+        if(!this.arreterDePousser && this.nbFrames % 3 == 0)
             this.pousser();
+        this.nbFrames++;
     }
 }
