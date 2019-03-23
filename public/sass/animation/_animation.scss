@@ -29,6 +29,33 @@
     }
 }
 
+@keyframes animChargementOuv{
+    from{
+        opacity: 0.0;
+    }
+    50%{
+        opacity: 0.0;
+    }
+    to{
+        opacity: 1.0;
+    }
+}
+
+@keyframes animCanvasOuverture{
+    from{
+        opacity: 0.0;
+    }
+    15%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 0.12;
+    }
+}
+
 @keyframes animApparitionImage{
     from{
         opacity: 0.0;
@@ -38,6 +65,15 @@
         opacity: 1.0;
         transform: translateX(0vw);
     }
+}
+
+.animCanvasOuverture{
+    animation: animCanvasOuverture 7s forwards;
+}
+
+.animChargementOuverture{
+    opacity: 0;
+    animation: animChargementOuv 7s forwards;
 }
 
 .animImage{

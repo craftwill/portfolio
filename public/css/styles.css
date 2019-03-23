@@ -413,6 +413,60 @@ template {
   }
 }
 
+@-webkit-keyframes animChargementOuv {
+  from {
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+@keyframes animChargementOuv {
+  from {
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes animCanvasOuverture {
+  from {
+    opacity: 0.0;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.12;
+  }
+}
+
+@keyframes animCanvasOuverture {
+  from {
+    opacity: 0.0;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.12;
+  }
+}
+
 @-webkit-keyframes animApparitionImage {
   from {
     opacity: 0.0;
@@ -439,6 +493,17 @@ template {
   }
 }
 
+.animCanvasOuverture {
+  -webkit-animation: animCanvasOuverture 7s forwards;
+          animation: animCanvasOuverture 7s forwards;
+}
+
+.animChargementOuverture {
+  opacity: 0;
+  -webkit-animation: animChargementOuv 7s forwards;
+          animation: animChargementOuv 7s forwards;
+}
+
 .animImage {
   -webkit-animation: animApparitionImage 0.7s forwards;
           animation: animApparitionImage 0.7s forwards;
@@ -457,7 +522,7 @@ body {
   position: fixed;
   left: 0px;
   top: 0px;
-  opacity: 0.17;
+  opacity: 0.5;
   pointer-events: none;
   z-index: -10;
 }

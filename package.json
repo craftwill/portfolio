@@ -1,8 +1,8 @@
 {
-    "name": "production-jeu-presentation",
+    "name": "portfolio",
     "version": "1.0.0",
     "description": "",
-    "main": "app.js",
+    "main": "serveur.js",
     "dependencies": {
         "express": "^4.15.2",
         "socket.io": "^2.1.1"
@@ -11,7 +11,7 @@
         "node": "8.10.x"
     },
     "scripts": {
-        "start": "node app.js"
+        "start": "node serveur.js"
     },
     "author": "William Gingras"
 }

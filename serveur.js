@@ -12,6 +12,6 @@ io.on('connection', function(socket){
     socketManager.connectionClient(socket);
 });
 
-http.listen(process.env.PORT || 2000, function(){
-  console.log('listening on *:2000');
+http.listen(process.env.PORT || 2001, function(){
+  console.log('listening on *:2001');
 });

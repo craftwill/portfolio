@@ -10,6 +10,7 @@ export class P5Sketch {
                 var context = htmlCanvas.getContext('2d');
 
                 htmlCanvas.style = "";
+                htmlCanvas.classList.add("animCanvasOuverture");
                 initialize();
 
                 function initialize() {
@@ -27,15 +28,15 @@ export class P5Sketch {
                 */
 
                 function Drop(){
-                    this.x = p.random(p.width);
-                    this.y = p.random(-200, 300);
+                    this.x = p.random(window.innerWidth);
+                    this.y = p.random(-200, 700);
                     this.z = p.random(1, 30);
-                    this.yspeed = p.random(1, 5)/(this.z/1.4);
+                    this.yspeed = p.random(3, 35)/(this.z/1.4);
                     this.longueur = p.random(130, 50);
                     this.fall = function(){
                         this.y += this.yspeed;
                         if(this.y > p.height)
-                            this.y = p.random(-200, -100);
+                            this.y = p.random(window.innerWidth);
                     }
                     this.show = function(){
                         p.stroke(210 + this.z, 210 - this.z, 210 - this.z);
@@ -56,11 +57,11 @@ export class P5Sketch {
                 p.background(255, 255, 255);
                 //p.ellipse(window.innerWidth / 2, window.innerHeight / 2, 40, 40);
                 // Rendu des gouttes
-                /*for(let x = 0; x < p.drops.length; x++){
-                    let d = p.drops[x];
-                    d.fall();
-                    d.show();
-                }*/
+                //for(let x = 0; x < p.drops.length; x++){
+                //    let d = p.drops[x];
+                //    d.fall();
+                //    d.show();
+                //}
                 // Rendu de l'arbre
                 p.arbreFractal.dessinerArbre();
             }

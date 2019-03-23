@@ -1,8 +1,9 @@
 import { Utils } from './Utils.js';
 
-const TAILLE_BRANCHES = Utils.random(10, 13);
-const LONGUEUR_BRANCHES = Utils.random(1.4, 1.7);
-const NB_FEUILLES = Utils.random(300, 350);
+var longueur_branches = Utils.random(1.4, 1.7) * 2;
+
+const TAILLE_BRANCHES = 11;
+const NB_FEUILLES = Utils.random(100, 150);
 const FACTEUR_POUSSE = Utils.random(50, 75);
 
 console.log(FACTEUR_POUSSE);
@@ -31,7 +32,7 @@ class Branche {
         this.dir = dir; // Direction de la branche
         this.dirOriginale = dir.copy(); 
         this.compte = 0;
-        this.longueur = LONGUEUR_BRANCHES;
+        this.longueur = longueur_branches;
     }
     reinitialiser(){
         this.dir = this.dirOriginale.copy();
@@ -41,7 +42,7 @@ class Branche {
         let p = this.p;
         if(this.parent != null){
             p.stroke(0);
-            p.strokeWeight(Math.max(TAILLE_BRANCHES - (this.generation/(TAILLE_BRANCHES+2)), 0.2));
+            p.strokeWeight(Math.max(TAILLE_BRANCHES - (this.generation/(TAILLE_BRANCHES+1)), 0.01));
             let decYFinal = decY/8.5;
             p.line(this.pos.x + decX, this.pos.y + decYFinal, this.parent.pos.x + decX, this.parent.pos.y + decYFinal);
         }
@@ -60,10 +61,10 @@ export class ArbreFractal {
     constructor(p){
         this.p = p; // Objet p5 utilisé pour le rendu du sketch P5JS
         this.dist_max = 150;
-        this.dist_min = 10;
+        this.dist_min = 18;
         this.nbFrames = 0;
         this.nbPousse = 0;
-        this.nbPousseMax = 900;
+        this.nbPousseMax = 200;
         this.arreterDePousser = false;
         this.racine = null;
         this.feuilles = [];
@@ -99,6 +100,7 @@ export class ArbreFractal {
             if(!trouver){
                 let branche = actuel.prochaineBranche();
                 actuel = branche;
+                branche.longueur = 2;
                 this.branches.push(branche);
             }
             if(it>maxIt)
@@ -107,10 +109,13 @@ export class ArbreFractal {
 
     }
     pousser(){
+        longueur_branches *= 0.995;
         let p = this.p;
+        if(this.nbPousse >= this.nbPousseMax){
+            this.arreterDePousser = true;
+            return;
+        }
         this.nbPousse++;
-        if(this.nbPousse >= this.nbPousseMax)
-        this.arreterDePousser = true;
         for(let x = 0; x < this.feuilles.length; x++){
             let feuille = this.feuilles[x];
             let branchePlusProche = null;
@@ -172,5 +177,6 @@ export class ArbreFractal {
         if(!this.arreterDePousser && this.nbFrames % 3 == 0)
             this.pousser();
         this.nbFrames++;
+        // console.log(this.nbPousse);
     }
 }
