@@ -17,40 +17,71 @@ export class ProjetsManager {
         this.visionnementProjet = document.querySelector(".visionnementProjet");
         this.voileNoir = document.querySelector(".voileNoir");
         this.listeDivs = document.querySelector(".conteneurProjets").querySelectorAll(".boiteProjet");
-        let nbDivs = this.listeDivs.length;
-        for(let x = 0; x < nbDivs; x++){
+        this.nbDivs = this.listeDivs.length;
+        for(let x = 0; x < this.nbDivs; x++){
             let div = this.listeDivs[x];
             div.setAttribute("data-id", (x+1));
             div.classList.add("p" + (x+1));
-            div.addEventListener("click", (e)=>{this.gererProjet(e, div, this);});
+            div.addEventListener("click", (e)=>{this.ouvrirProjet(e, div);});
         }
         this.initialisationProjets();
     }
-    gererProjet(e, div, projetManager){
-        this.visionnementProjet = document.querySelector(".visionnementProjet");
+    ouvrirProjet(e, div){
         this.projetOuvert = !this.projetOuvert;
-        if(this.projetOuvert){
-            this.visionnementProjet.style.right = "0vw";
-            this.voileNoir.style.opacity = 1;
-            this.voileNoir.style.pointerEvents = "all";
-            let boites = document.querySelectorAll(".boiteContent");
-            for(let x = 0; x < boites.length; x++){
-                boites[x].style.filter = "blur(2px)";
-            }
-        }else{
-            this.visionnementProjet.style.right = "-100vw";
-            this.voileNoir.style.opacity = 0;
-            this.voileNoir.style.pointerEvents = "none";
-            let boites = document.querySelectorAll(".boiteContent");
-            for(let x = 0; x < boites.length; x++){
-                boites[x].style.filter = "blur(0px)";
-            }
+
+        // Dans le cas ou l'utilisateur réappuie sur le projet
+        if(this.projetOuvert == false){
+            this.fermerProjet(e);
+            return;
         }
-        // Gérer le contenu dans la page de visionnement
+
+        // Ouvrir visuellement
+        this.visionnementProjet.style.right = "0vw";
+        this.voileNoir.style.opacity = 0.9;
+        this.voileNoir.style.pointerEvents = "all";
+        document.body.style.overflowY = "hidden";
+        //document.body.style.marginBottom = "-130px";
+        document.body.style.marginRight = "30px";
+        let boites = document.querySelectorAll(".boiteContent");
+        for(let x = 0; x < boites.length; x++){
+            boites[x].style.filter = "blur(2px)";
+        }
+        for(let x = 0; x < this.nbDivs; x++){
+            this.listeDivs[x].querySelector("img").style.filter = "brightness(11%)";
+        }
+
+        // Gérer l'appairiton du contenu dans la page de visionnement
         let idProjet = div.getAttribute("data-id");
-        let p = projetManager.getProjetParID(idProjet);
-        console.log(p);
+        let p = this.getProjetParID(idProjet);
         this.visionnementProjet.querySelector("div").innerHTML = p.description;
+
+        // Ajouter l'évènement pour refermer la page de visionnement
+        e.stopPropagation();
+        this.voileNoir.addEventListener("click", (ev)=>{this.fermerProjet(ev)});
+    }
+    fermerProjet(e){
+        this.projetOuvert = false;
+
+        // Enlever l'évènement
+        this.voileNoir.removeEventListener("click", this.fermerProjet);
+        e.stopPropagation();
+
+        // Fermer visuellement
+        this.visionnementProjet.style.right = "-100vw";
+        this.voileNoir.style.opacity = 0;
+        this.voileNoir.style.pointerEvents = "none";
+        document.body.style.overflowY = "auto";
+        document.body.style.marginRight = "-0px";
+
+        window.scrollBy(0, 1);
+
+        let boites = document.querySelectorAll(".boiteContent");
+        for(let x = 0; x < boites.length; x++){
+            boites[x].style.filter = "blur(0px)";
+        }
+        for(let x = 0; x < this.nbDivs; x++){
+            this.listeDivs[x].querySelector("img").style.filter = "brightness(100%)";
+        }
     }
     getProjetParID(id){
         return this.listeProjets.find((p)=>{return (p.id == id)});
