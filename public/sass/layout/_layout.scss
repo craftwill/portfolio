@@ -53,6 +53,8 @@ body{
             top: 25px;
             bottom: 25px;
         }
+        transition: filter 0.7s;
+        filter: blur(0px);
     }
     &>.espace{
         grid-area: "espace";
@@ -160,6 +162,53 @@ body{
                     height: 0px;
                     color: white;
                     z-index: 50;
+                }
+            }
+        }
+    }
+    &>.visionnementProjet{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-width: 75vw;
+
+        color: black;
+
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(221, 221, 221);
+        top: 0vh;
+        right: -75vw;
+        transition: right 0.7s;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        &>div{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: {
+                left: 5vw;
+                right: 5vw;
+            }
+            &>div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &>h1{
+                    text-align: center;
+                    font-size: 2.5em;
+                }
+                &>img{
+                    margin-bottom:4vh;
+                    width: 44vw;
+                    border-radius: 5px;
+                    
+                    box-shadow: 5px 10px #888888;
                 }
             }
         }

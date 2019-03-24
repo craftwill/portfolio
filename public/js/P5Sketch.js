@@ -27,7 +27,7 @@ export class P5Sketch {
                 START HERE
                 */
 
-                function Drop(){
+                /*function Drop(){
                     this.x = p.random(window.innerWidth);
                     this.y = p.random(-200, 700);
                     this.z = p.random(1, 30);
@@ -49,8 +49,8 @@ export class P5Sketch {
                 for(var x = 0; x < 100; x++){
                     this.drops.push(new Drop());
                 }
-
-                this.arbreFractal = new ArbreFractal(p); 
+                */
+                //this.arbreFractal = new ArbreFractal(p); 
 
             }
             p.draw = function () {
@@ -63,7 +63,7 @@ export class P5Sketch {
                 //    d.show();
                 //}
                 // Rendu de l'arbre
-                p.arbreFractal.dessinerArbre();
+                //p.arbreFractal.dessinerArbre();
             }
         }, "sketch1");
     }

@@ -417,7 +417,7 @@ template {
   from {
     opacity: 0.0;
   }
-  50% {
+  85% {
     opacity: 0.0;
   }
   to {
@@ -429,7 +429,7 @@ template {
   from {
     opacity: 0.0;
   }
-  50% {
+  85% {
     opacity: 0.0;
   }
   to {
@@ -494,14 +494,14 @@ template {
 }
 
 .animCanvasOuverture {
-  -webkit-animation: animCanvasOuverture 7s forwards;
-          animation: animCanvasOuverture 7s forwards;
+  -webkit-animation: animCanvasOuverture 0.1s forwards;
+          animation: animCanvasOuverture 0.1s forwards;
 }
 
 .animChargementOuverture {
   opacity: 0;
-  -webkit-animation: animChargementOuv 7s forwards;
-          animation: animChargementOuv 7s forwards;
+  -webkit-animation: animChargementOuv 0.1s forwards;
+          animation: animChargementOuv 0.1s forwards;
 }
 
 .animImage {
@@ -581,6 +581,12 @@ body {
   width: 100%;
   margin-top: 25px;
   margin-bottom: 25px;
+  -webkit-transition: -webkit-filter 0.7s;
+  transition: -webkit-filter 0.7s;
+  transition: filter 0.7s;
+  transition: filter 0.7s, -webkit-filter 0.7s;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 .content > .espace {
@@ -716,6 +722,76 @@ body {
   height: 0px;
   color: white;
   z-index: 50;
+}
+
+.content > .visionnementProjet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-width: 75vw;
+  color: black;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dddddd;
+  top: 0vh;
+  right: -75vw;
+  -webkit-transition: right 0.7s;
+  transition: right 0.7s;
+}
+
+.content > .visionnementProjet::-webkit-scrollbar {
+  display: none;
+}
+
+.content > .visionnementProjet > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.content > .visionnementProjet > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content > .visionnementProjet > div > div > h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.content > .visionnementProjet > div > div > img {
+  margin-bottom: 4vh;
+  width: 44vw;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 10px #888888;
+          box-shadow: 5px 10px #888888;
 }
 
 .footer {

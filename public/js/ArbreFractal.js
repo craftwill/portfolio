@@ -1,6 +1,6 @@
 import { Utils } from './Utils.js';
 
-var longueur_branches = Utils.random(1.4, 1.7) * 2;
+var longueur_branches = 1.6*2;//Utils.random(1.4, 1.7) * 2;
 
 const TAILLE_BRANCHES = 11;
 const NB_FEUILLES = Utils.random(100, 150);

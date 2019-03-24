@@ -15,6 +15,6 @@ import { AnimImages } from "./AnimImages.js";
     // Animation des projets
     let animProjets = new AnimImages(document.querySelector(".conteneurProjets"));
 
-    console.log(pManager.getProjetParNom("projet01_titreTest"));
+    // console.log(pManager.getProjetParNom("projet01_titreTest"));
 
 })();
