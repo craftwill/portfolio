@@ -1,12 +1,20 @@
 @mixin fonte-texte($couleur){
     color: $couleur;
     font-size: 23px;
-    font-family: $fonte__robotoSlab;
     @media (max-width: 768px) {
         font-size: $fonte__size_mobile;
     }
     @media (min-width: 769px) and (max-width: 5075px) {
         font-size: $fonte__size_grand;
+    }
+}
+
+@mixin fonte-texte-titre-visionneur(){
+    @media (max-width: 768px) {
+        font-size: $fonte__size_titre_mobile;
+    }
+    @media (min-width: 769px) and (max-width: 5075px) {
+        font-size: $fonte__size_titre_grand;
     }
 }
 

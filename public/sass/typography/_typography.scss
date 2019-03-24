@@ -1,5 +1,6 @@
 body {
     @include fonte-texte($couleur__fonte);
+    font-family: 'Helvetica', serif;
 }
 
 .chargement{

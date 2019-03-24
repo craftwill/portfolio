@@ -50,7 +50,7 @@ export class P5Sketch {
                     this.drops.push(new Drop());
                 }
                 */
-                //this.arbreFractal = new ArbreFractal(p); 
+                this.arbreFractal = new ArbreFractal(p); 
 
             }
             p.draw = function () {
@@ -63,7 +63,7 @@ export class P5Sketch {
                 //    d.show();
                 //}
                 // Rendu de l'arbre
-                //p.arbreFractal.dessinerArbre();
+                p.arbreFractal.dessinerArbre();
             }
         }, "sketch1");
     }

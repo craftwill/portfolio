@@ -514,6 +514,28 @@ template {
   padding: 0;
 }
 
+.voileNoir {
+  pointer-events: none;
+  background-color: black;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -783,7 +805,18 @@ body {
 
 .content > .visionnementProjet > div > div > h1 {
   text-align: center;
-  font-size: 2.5em;
+}
+
+@media (max-width: 768px) {
+  .content > .visionnementProjet > div > div > h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 5075px) {
+  .content > .visionnementProjet > div > div > h1 {
+    font-size: 2.5em;
+  }
 }
 
 .content > .visionnementProjet > div > div > img {
@@ -814,7 +847,7 @@ body {
 body {
   color: black;
   font-size: 23px;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Helvetica', serif;
 }
 
 @media (max-width: 768px) {

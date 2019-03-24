@@ -15,6 +15,7 @@ export class ProjetsManager {
         this.projetOuvert = false;
         this.listeProjets = [];
         this.visionnementProjet = document.querySelector(".visionnementProjet");
+        this.voileNoir = document.querySelector(".voileNoir");
         this.listeDivs = document.querySelector(".conteneurProjets").querySelectorAll(".boiteProjet");
         let nbDivs = this.listeDivs.length;
         for(let x = 0; x < nbDivs; x++){
@@ -30,12 +31,16 @@ export class ProjetsManager {
         this.projetOuvert = !this.projetOuvert;
         if(this.projetOuvert){
             this.visionnementProjet.style.right = "0vw";
+            this.voileNoir.style.opacity = 1;
+            this.voileNoir.style.pointerEvents = "all";
             let boites = document.querySelectorAll(".boiteContent");
             for(let x = 0; x < boites.length; x++){
                 boites[x].style.filter = "blur(2px)";
             }
         }else{
             this.visionnementProjet.style.right = "-100vw";
+            this.voileNoir.style.opacity = 0;
+            this.voileNoir.style.pointerEvents = "none";
             let boites = document.querySelectorAll(".boiteContent");
             for(let x = 0; x < boites.length; x++){
                 boites[x].style.filter = "blur(0px)";
@@ -55,6 +60,33 @@ export class ProjetsManager {
         this.listeProjets.push(new Projet(
             "Massacre à l'auberg-inn",
             `
+                <div>
+                    <h1>Massacre à l'auberg-inn</h1>
+                    <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
+                    <div>
+                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                    </div>
+                </div>
+            
+            
+                <div>
+                    <h1>Massacre à l'auberg-inn</h1>
+                    <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
+                    <div>
+                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                    </div>
+                </div>
+            
+            
+                <div>
+                    <h1>Massacre à l'auberg-inn</h1>
+                    <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
+                    <div>
+                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                    </div>
+                </div>
+            
+            
                 <div>
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
