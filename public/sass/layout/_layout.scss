@@ -235,9 +235,11 @@ body{
                     box-shadow: 5px 10px #888888;
                 }
                 & p {
+                    display: block;
+                    min-height: 1em;
                     margin-bottom:3vh;
                 }
-                margin-bottom: 80vh;
+                margin-bottom: 2.5vh;
             }
         }
         &>.visionnementProjetSortir{
