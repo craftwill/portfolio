@@ -494,14 +494,14 @@ template {
 }
 
 .animCanvasOuverture {
-  -webkit-animation: animCanvasOuverture 0.1s forwards;
-          animation: animCanvasOuverture 0.1s forwards;
+  -webkit-animation: animCanvasOuverture 6s forwards;
+          animation: animCanvasOuverture 6s forwards;
 }
 
 .animChargementOuverture {
   opacity: 0;
-  -webkit-animation: animChargementOuv 0.1s forwards;
-          animation: animChargementOuv 0.1s forwards;
+  -webkit-animation: animChargementOuv 5s forwards;
+          animation: animChargementOuv 5s forwards;
 }
 
 .animImage {
@@ -719,10 +719,8 @@ body {
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   width: 100%;
-  -webkit-transition: -webkit-filter 0.4s;
-  transition: -webkit-filter 0.4s;
-  transition: filter 0.4s;
-  transition: filter 0.4s, -webkit-filter 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 
 .content > .projets > .conteneurProjets > div > .titre_projet {
@@ -801,6 +799,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 15px;
 }
 
 .content > .visionnementProjet > div > div > h1 {

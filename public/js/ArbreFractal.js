@@ -64,7 +64,7 @@ export class ArbreFractal {
         this.dist_min = 18;
         this.nbFrames = 0;
         this.nbPousse = 0;
-        this.nbPousseMax = 200;
+        this.nbPousseMax = 90;
         this.arreterDePousser = false;
         this.racine = null;
         this.feuilles = [];

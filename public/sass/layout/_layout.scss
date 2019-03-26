@@ -147,7 +147,7 @@ body{
                     left: 0px;
                     filter: brightness(100%);
                     width: 100%;
-                    transition: filter 0.4s;
+                    transition: opacity 0.4s;
                 }
                 
                 &>.titre_projet{
@@ -217,6 +217,7 @@ body{
                     
                     box-shadow: 5px 10px #888888;
                 }
+                margin-bottom: 15px;
             }
         }
     }

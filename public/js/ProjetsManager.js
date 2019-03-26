@@ -14,6 +14,7 @@ export class ProjetsManager {
     constructor(){
         this.projetOuvert = false;
         this.listeProjets = [];
+        this.contentDiv = document.querySelector(".content");
         this.visionnementProjet = document.querySelector(".visionnementProjet");
         this.voileNoir = document.querySelector(".voileNoir");
         this.listeDivs = document.querySelector(".conteneurProjets").querySelectorAll(".boiteProjet");
@@ -47,7 +48,9 @@ export class ProjetsManager {
             boites[x].style.filter = "blur(2px)";
         }
         for(let x = 0; x < this.nbDivs; x++){
-            this.listeDivs[x].querySelector("img").style.filter = "brightness(11%)";
+            let imgElm = this.listeDivs[x].querySelector("img");
+            imgElm.style.opacity = "0.1";
+            this.listeDivs[x].style.pointerEvents = "none";
         }
 
         // Gérer l'appairiton du contenu dans la page de visionnement
@@ -73,14 +76,16 @@ export class ProjetsManager {
         document.body.style.overflowY = "auto";
         document.body.style.marginRight = "-0px";
 
-        window.scrollBy(0, 1);
+        // window.scrollBy(0, 25);
 
         let boites = document.querySelectorAll(".boiteContent");
         for(let x = 0; x < boites.length; x++){
             boites[x].style.filter = "blur(0px)";
         }
         for(let x = 0; x < this.nbDivs; x++){
-            this.listeDivs[x].querySelector("img").style.filter = "brightness(100%)";
+            let imgElm = this.listeDivs[x].querySelector("img");
+            imgElm.style.opacity = "1";
+            this.listeDivs[x].style.pointerEvents = "all";
         }
     }
     getProjetParID(id){

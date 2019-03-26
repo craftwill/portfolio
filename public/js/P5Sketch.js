@@ -21,6 +21,7 @@ export class P5Sketch {
                 function resizeCanvas() {
                     htmlCanvas.width = window.innerWidth;
                     htmlCanvas.height = window.innerHeight;
+                    p.dessiner();
                 }
 
                 /*
@@ -50,20 +51,21 @@ export class P5Sketch {
                     this.drops.push(new Drop());
                 }
                 */
-                this.arbreFractal = new ArbreFractal(p); 
-
+                p.arbreFractal = new ArbreFractal(p);
             }
             p.draw = function () {
+                if(p.arbreFractal.arreterDePousser)
+                    return;
                 p.background(255, 255, 255);
-                //p.ellipse(window.innerWidth / 2, window.innerHeight / 2, 40, 40);
-                // Rendu des gouttes
-                //for(let x = 0; x < p.drops.length; x++){
-                //    let d = p.drops[x];
-                //    d.fall();
-                //    d.show();
-                //}
+                console.log(p.arbreFractal);
                 // Rendu de l'arbre
                 p.arbreFractal.dessinerArbre();
+            }
+            p.dessiner = function() {
+                if(p.arbreFractal != null){
+                    p.background(255, 255, 255);
+                    p.arbreFractal.dessinerArbre();
+                }
             }
         }, "sketch1");
     }
