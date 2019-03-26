@@ -89,6 +89,7 @@ body{
         grid-area: "description";
         margin-bottom: 35vh;
         border-top: 1px solid rgb(194, 194, 194);
+        border-radius: 8px;
         padding-top: 2vh;
         &>h2{
             margin-bottom: 3vh;
@@ -105,6 +106,7 @@ body{
     &>.projets{
         grid-area: "projets";
         border-top: 1px solid rgb(194, 194, 194);
+        border-radius: 8px;
         padding-top: 2vh;
         &>h2{
             align-self: flex-start;
@@ -235,7 +237,7 @@ body{
                 & p{
                     margin-bottom:3vh;
                 }
-                margin-bottom: 15px;
+                margin-bottom: 215px;
             }
         }
         &>.visionnementProjetSortir{
@@ -243,7 +245,7 @@ body{
             top: 25vh;
             left: -18vw;
             cursor: pointer;
-            background: rgb(47, 47, 47);
+            background: rgb(77, 77, 77);
             color: white;
             padding: 15px;
             padding-top: 25vh;
@@ -260,6 +262,7 @@ body{
     opacity: 0.85;
     color: rgb(44, 44, 44);
     height: 17vh;
+    z-index: -1;
     &>div{
         display: flex;
         justify-content: center;

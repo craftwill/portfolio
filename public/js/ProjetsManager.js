@@ -42,7 +42,7 @@ export class ProjetsManager {
         this.voileNoir.style.opacity = 0.9;
         this.voileNoir.style.pointerEvents = "all";
         document.body.style.overflowY = "hidden";
-        document.body.style.marginRight = "30px";
+        //document.body.style.marginRight = "30px";
         this.visionnementProjetSortir.style.left = "0vw";
 
         let boites = document.querySelectorAll(".boiteContent");
@@ -78,7 +78,7 @@ export class ProjetsManager {
         this.voileNoir.style.opacity = 0;
         this.voileNoir.style.pointerEvents = "none";
         document.body.style.overflowY = "auto";
-        document.body.style.marginRight = "-0px";
+        //document.body.style.marginRight = "-0px";
         this.visionnementProjetSortir.style.left = "-18vw";
 
         // window.scrollBy(0, 25);
