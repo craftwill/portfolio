@@ -19,8 +19,8 @@ export class P5Sketch {
                 }
 
                 function resizeCanvas() {
-                    htmlCanvas.width = window.innerWidth;
-                    htmlCanvas.height = window.innerHeight;
+                    htmlCanvas.width = window.visualViewport.width;
+                    htmlCanvas.height = window.visualViewport.height;
                     p.dessiner();
                 }
                 

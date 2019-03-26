@@ -69,8 +69,8 @@ export class ArbreFractal {
         this.racine = null;
         this.feuilles = [];
         this.branches = [];
-        this.decX = window.innerWidth / 2;
-        this.decY = window.innerHeight / 2;
+        this.decX = window.visualViewport.width / 2;
+        this.decY = window.visualViewport.height / 2;
 
         for(let x = 0; x < NB_FEUILLES; x++){
             this.feuilles.push(new Feuille(p, this.decX, this.decY));
@@ -164,8 +164,8 @@ export class ArbreFractal {
     }
     dessinerArbre(){
         let p = this.p;
-        this.decX = window.innerWidth / 2;
-        this.decY = window.innerHeight / 2 - 50;
+        this.decX = window.visualViewport.width / 2;
+        this.decY = window.visualViewport.height / 2 - 50;
         //for(let x = 0; x < this.feuilles.length; x++){
         //    this.feuilles[x].dessiner();
         //}
