@@ -32,12 +32,8 @@ export class ProjetsManager {
             // Injection de style css pour arranger un problème d'espacement lié au visionneur de projet
             var node = document.createElement("style");
             node.innerHTML = `
-                .content > .visionnementProjet > div:nth-child(1) > div{
-                    margin-bottom: 90vh;
-                }
-                .content > .visionnementProjet > div:nth-child(1) > div:last-child{
-                    margin-top: 10vh;
-                    margin-bottom: 10vh;
+                .content > .visionnementProjet > div:nth-child(1) > div p{
+                    margin-bottom: 80vh;
                 }
             `;
             document.body.appendChild(node);
