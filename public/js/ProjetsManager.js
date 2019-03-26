@@ -30,13 +30,13 @@ export class ProjetsManager {
         this.initialisationProjets();
         if(this.surMobile){
             // Injection de style css pour arranger un problème d'espacement lié au visionneur de projet
-            var node = document.createElement("style");
-            node.innerHTML = `
-                .content > .visionnementProjet > div:nth-child(1) > div p{
-                    margin-bottom: 80vh;
-                }
-            `;
-            document.body.appendChild(node);
+            //var node = document.createElement("style");
+            //node.innerHTML = `
+            //    .content > .visionnementProjet > div:nth-child(1) > div p{
+            //        margin-bottom: 80vh;
+            //    }
+            //`;
+            //document.body.appendChild(node);
         }
     }
     ouvrirProjet(e, div){
@@ -156,30 +156,17 @@ export class ProjetsManager {
                     <div>
                         <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et est particulièrement développé dans un but éducatif.</p>
                     </div>
-                </div>
-                <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
                     <div>
                         <p>Le jeu original est fait en Flash tandis que les 3 mini-jeux de livré par navire sont en Typescript qui se compile en javascript avec la librairie Phaser. Tout d'abord, nous avons décidé de refaire entièrement la partie Flash à l'aide d'Unity en C#, par contre, refaire les jeux qui marchaient déjà aurait été une perte de temps.</p>
                     </div>
-                </div>
-                <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.png" alt="">
                     <div>
                         <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication as.</p>
                     </div>
-                </div>
-                <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.png" alt="">
-                    <div>
-                    </div>
-                </div>
-                <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.png" alt="">
-                    <div>
-                    </div>
                 </div>
-                <div><p></p></div>
             `,
             "apercuProjet"+idCompte+".png"
         ));
@@ -249,26 +236,22 @@ export class ProjetsManager {
                     <div>
                         <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et est particulièrement développé dans un but éducatif.</p>
                     </div>
-                </div>
-                <div>
+
                     <img src="images/projets/projet${idCompte+1}/p7_01.png" alt="">
                     <div>
                         <p>Le jeu original est fait en Flash tandis que les 3 mini-jeux de livré par navire sont en Typescript qui se compile en javascript avec la librairie Phaser. Tout d'abord, nous avons décidé de refaire entièrement la partie Flash à l'aide d'Unity en C#, par contre, refaire les jeux qui marchaient déjà aurait été une perte de temps.</p>
                     </div>
-                </div>
-                <div>
+
                     <img src="images/projets/projet${idCompte+1}/p7_02.png" alt="">
                     <div>
                         <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication asynchrone entre le mini-jeu et Unity afin de transmettre des données à celui-ci. </p>
                     </div>
-                </div>
-                <div>
+
                     <img src="images/projets/projet${idCompte+1}/p7_03.png" alt="">
                     <div>
                         <p>Bref, ce défi n'a pas été facile, mais j'ai beaucoup appris sur la façon le travail en entreprise en tant que programmeur de jeux et sur mon rôle en tant qu'expert dans mon domaine. Ce jeu est de CREO inc. Vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
                     </div>
                 </div>
-                <div><p></p></div>
             `,
             "apercuProjet"+idCompte+".png"
         ));
