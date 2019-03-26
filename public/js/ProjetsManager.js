@@ -179,19 +179,17 @@ export class ProjetsManager {
                 <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.png" alt="">
                     <div>
-                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication asynchrone entre le mini-jeu et Unity afin de transmettre des données à celui-ci. Bref, ce défi n'a pas été facile, mais j'ai beaucoup appris sur la façon le travail en entreprise en tant que programmeur de jeux et sur mon rôle en tant qu'expert dans mon domaine.</p>
+                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication as.</p>
                     </div>
                 </div>
                 <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.png" alt="">
                     <div>
-                        <p>Ce jeu est de CREO inc. et vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
                     </div>
                 </div>
                 <div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.png" alt="">
                     <div>
-                        <p>Ce jeu est de CREO inc. et vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
                     </div>
                 </div>
                 <div><p></p></div>
@@ -274,13 +272,13 @@ export class ProjetsManager {
                 <div>
                     <img src="images/projets/projet${idCompte+1}/p7_02.png" alt="">
                     <div>
-                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication asynchrone entre le mini-jeu et Unity afin de transmettre des données à celui-ci. Bref, ce défi n'a pas été facile, mais j'ai beaucoup appris sur la façon le travail en entreprise en tant que programmeur de jeux et sur mon rôle en tant qu'expert dans mon domaine.</p>
+                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication asynchrone entre le mini-jeu et Unity afin de transmettre des données à celui-ci. </p>
                     </div>
                 </div>
                 <div>
                     <img src="images/projets/projet${idCompte+1}/p7_03.png" alt="">
                     <div>
-                        <p>Ce jeu est de CREO inc. et vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
+                        <p>Bref, ce défi n'a pas été facile, mais j'ai beaucoup appris sur la façon le travail en entreprise en tant que programmeur de jeux et sur mon rôle en tant qu'expert dans mon domaine. Ce jeu est de CREO inc. Vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
                     </div>
                 </div>
                 <div><p></p></div>
