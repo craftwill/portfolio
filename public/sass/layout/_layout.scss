@@ -21,6 +21,7 @@ body{
     z-index: -10;
 }
 .conteneur{
+    z-index: -2;
     display: grid;
     grid-template: 
     "header"
@@ -53,7 +54,7 @@ body{
         flex: 1 1 100%;
         justify-content: center;
         align-items: center;
-        color: black;
+
         opacity: 1;
         min-height: 200px;
         width: 100%;
@@ -82,7 +83,8 @@ body{
             margin-bottom: 15px;
         }
         &>p{
-            font-size: 22px;
+            font-size: 24px;
+            font-weight: bold;
         }
     }
     &>.description{
@@ -191,6 +193,8 @@ body{
         }
     }
     &>.visionnementProjet{
+        z-index: 1;
+
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -262,9 +266,9 @@ body{
     grid-area: "footer";
     background-color: black;
     opacity: 0.85;
-    color: rgb(44, 44, 44);
+    color: rgb(146, 146, 146);
     height: 17vh;
-    z-index: -1;
+    //z-index: -1;
     &>div{
         display: flex;
         justify-content: center;
@@ -278,6 +282,9 @@ body{
                 bottom: 5px;
             }
         }
+    }
+    & a{
+        cursor: pointer;
     }
 }
 //////////////////////////////////////

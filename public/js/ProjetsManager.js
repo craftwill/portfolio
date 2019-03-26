@@ -44,7 +44,7 @@ export class ProjetsManager {
         this.voileNoir.style.pointerEvents = "all";
         document.body.style.overflowY = "hidden";
         //document.body.style.marginRight = "30px";
-        this.visionnementProjetSortir.style.left = "5vw";
+        this.visionnementProjetSortir.style.left = "0vw";
 
         let boites = document.querySelectorAll(".boiteContent");
         // Optimisation pour mobile

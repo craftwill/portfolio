@@ -1,6 +1,13 @@
 body {
     @include fonte-texte($couleur__fonte);
     font-family: 'Helvetica', serif;
+    & h1, h2, h3{
+        color: black;
+        font-weight: bold;
+    }
+    & p{
+        font-weight: 500;
+    }
 }
 
 .chargement{
