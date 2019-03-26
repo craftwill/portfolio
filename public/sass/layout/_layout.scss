@@ -92,7 +92,7 @@ body{
         margin-bottom: 35vh;
         border-top: 1px solid rgb(194, 194, 194);
         border-radius: 8px;
-        padding-top: 2vh;
+        padding-top: 4vh;
         &>h2{
             margin-bottom: 3vh;
             align-self: flex-start;
@@ -109,7 +109,7 @@ body{
         grid-area: "projets";
         border-top: 1px solid rgb(194, 194, 194);
         border-radius: 8px;
-        padding-top: 2vh;
+        padding-top: 4vh;
         &>h2{
             align-self: flex-start;
             margin-bottom: 6vh;
@@ -298,10 +298,19 @@ body{
             right: 2vw;
         }
     }
+    .content{
+        &>.description{
+            &>p{
+                padding: {
+                    top: 15px;
+                    left: 5px;
+                }
+            }
+        }
+    }
 }
 // Ipad
 @media (min-width: 769px) and (max-width: 1024px) {
-    
 }
 // Grand Écran
 @media (min-width: 1025px) and (max-width: 2075px) {

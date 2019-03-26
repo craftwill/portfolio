@@ -656,7 +656,7 @@ body {
   margin-bottom: 35vh;
   border-top: 1px solid #c2c2c2;
   border-radius: 8px;
-  padding-top: 2vh;
+  padding-top: 4vh;
 }
 
 .content > .description > h2 {
@@ -675,7 +675,7 @@ body {
   grid-area: "projets";
   border-top: 1px solid #c2c2c2;
   border-radius: 8px;
-  padding-top: 2vh;
+  padding-top: 4vh;
 }
 
 .content > .projets > h2 {
@@ -929,6 +929,10 @@ body {
   .conteneur {
     margin-left: 2vw;
     margin-right: 2vw;
+  }
+  .content > .description > p {
+    padding-top: 15px;
+    padding-left: 5px;
   }
 }
 

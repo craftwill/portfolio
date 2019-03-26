@@ -33,7 +33,7 @@ export class ProjetsManager {
             var node = document.createElement("style");
             node.innerHTML = `
                 .content > .visionnementProjet > div:nth-child(1) > div:last-child {
-                    margin-bottom: 20vh;
+                    margin-bottom: 45vh;
                 }
             `;
             document.body.appendChild(node);
@@ -41,6 +41,9 @@ export class ProjetsManager {
     }
     ouvrirProjet(e, div){
         this.projetOuvert = !this.projetOuvert;
+
+        //div.parentElement.parentElement.scrollTo(0, 0);
+        this.visionnementProjet.scrollTo(0,0);
 
         // Dans le cas ou l'utilisateur réappuie sur le projet
         if(this.projetOuvert == false){
