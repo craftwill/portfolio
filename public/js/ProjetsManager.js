@@ -30,13 +30,13 @@ export class ProjetsManager {
         this.initialisationProjets();
         if(this.surMobile){
             // Injection de style css pour arranger un problème d'espacement lié au visionneur de projet
-            //var node = document.createElement("style");
-            //node.innerHTML = `
-            //    .content > .visionnementProjet > div:nth-child(1) > div p{
-            //        margin-bottom: 80vh;
-            //    }
-            //`;
-            //document.body.appendChild(node);
+            var node = document.createElement("style");
+            node.innerHTML = `
+                .content > .visionnementProjet > div:nth-child(1) > div:last-child {
+                    margin-bottom: 20vh;
+                }
+            `;
+            document.body.appendChild(node);
         }
     }
     ouvrirProjet(e, div){
