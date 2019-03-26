@@ -28,6 +28,16 @@ export class ProjetsManager {
             div.addEventListener("click", (e)=>{this.ouvrirProjet(e, div);});
         }
         this.initialisationProjets();
+        if(this.surMobile){
+            // Injection de style css pour arranger un problème d'espacement lié au visionneur de projet
+            var node = document.createElement("style");
+            node.innerHTML = `
+                .content > .visionnementProjet > div:nth-child(1) > div{
+                    margin-bottom: 90vh;
+                }
+            `;
+            document.body.appendChild(node);
+        }
     }
     ouvrirProjet(e, div){
         this.projetOuvert = !this.projetOuvert;
