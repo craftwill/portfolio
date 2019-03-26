@@ -1,3 +1,14 @@
+@mixin fonte-texte-header(){
+    color: black;
+    font-size: 23px;
+    @media (max-width: 768px) {
+        font-size: $fonte__size_grand_header;
+    }
+    @media (min-width: 769px) and (max-width: 5075px) {
+        font-size: $fonte__size_mobile_header;
+    }
+}
+
 @mixin fonte-texte($couleur){
     color: $couleur;
     font-size: 23px;

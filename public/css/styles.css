@@ -417,7 +417,7 @@ template {
   from {
     opacity: 0.0;
   }
-  85% {
+  65% {
     opacity: 0.0;
   }
   to {
@@ -429,7 +429,7 @@ template {
   from {
     opacity: 0.0;
   }
-  85% {
+  65% {
     opacity: 0.0;
   }
   to {
@@ -494,14 +494,14 @@ template {
 }
 
 .animCanvasOuverture {
-  -webkit-animation: animCanvasOuverture 6s forwards;
-          animation: animCanvasOuverture 6s forwards;
+  -webkit-animation: animCanvasOuverture 3s forwards;
+          animation: animCanvasOuverture 3s forwards;
 }
 
 .animChargementOuverture {
   opacity: 0;
-  -webkit-animation: animChargementOuv 5s forwards;
-          animation: animChargementOuv 5s forwards;
+  -webkit-animation: animChargementOuv 3s forwards;
+          animation: animChargementOuv 3s forwards;
 }
 
 .animImage {
@@ -569,7 +569,21 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
-  font-size: 33px;
+  margin-top: 7vh;
+  color: black;
+  font-size: 23px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 5075px) {
+  .header {
+    font-size: 33px;
+  }
 }
 
 .content {
@@ -619,6 +633,8 @@ body {
 .content > .portrait {
   opacity: 1;
   grid-area: "portrait";
+  margin-top: 6vh;
+  margin-bottom: 299px;
 }
 
 .content > .portrait > img {
@@ -627,6 +643,7 @@ body {
   width: 80%;
   height: 80%;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .content > .portrait > p {
@@ -635,22 +652,34 @@ body {
 
 .content > .description {
   grid-area: "description";
+  margin-bottom: 35vh;
+  border-top: 1px solid #c2c2c2;
+  padding-top: 2vh;
 }
 
 .content > .description > h2 {
-  font-size: 25px;
+  margin-bottom: 3vh;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 33px;
 }
 
 .content > .description > p {
   padding-top: 15px;
+  padding-left: 35px;
 }
 
 .content > .projets {
   grid-area: "projets";
+  border-top: 1px solid #c2c2c2;
+  padding-top: 2vh;
 }
 
 .content > .projets > h2 {
-  font-size: 25px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-bottom: 6vh;
+  font-size: 33px;
 }
 
 .content > .projets > .conteneurProjets {
@@ -658,6 +687,7 @@ body {
   display: grid;
   grid-template: auto auto;
   width: 95%;
+  max-width: 950px;
   margin-top: 15px;
 }
 
@@ -690,8 +720,10 @@ body {
   left: 0%;
   height: 0px;
   font-size: 15px;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s, -webkit-filter 0.4s;
+  transition: opacity 0.4s, -webkit-filter 0.4s;
+  transition: opacity 0.4s, filter 0.4s;
+  transition: opacity 0.4s, filter 0.4s, -webkit-filter 0.4s;
   content: "Appuyer pour voir";
 }
 
@@ -719,8 +751,10 @@ body {
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   width: 100%;
-  -webkit-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s, -webkit-filter 0.4s;
+  transition: opacity 0.4s, -webkit-filter 0.4s;
+  transition: opacity 0.4s, filter 0.4s;
+  transition: opacity 0.4s, filter 0.4s, -webkit-filter 0.4s;
 }
 
 .content > .projets > .conteneurProjets > div > .titre_projet {
@@ -773,7 +807,7 @@ body {
   display: none;
 }
 
-.content > .visionnementProjet > div {
+.content > .visionnementProjet > div:nth-child(1) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -788,7 +822,7 @@ body {
   padding-right: 5vw;
 }
 
-.content > .visionnementProjet > div > div {
+.content > .visionnementProjet > div:nth-child(1) > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -802,28 +836,46 @@ body {
   margin-bottom: 15px;
 }
 
-.content > .visionnementProjet > div > div > h1 {
+.content > .visionnementProjet > div:nth-child(1) > div > h1 {
   text-align: center;
 }
 
 @media (max-width: 768px) {
-  .content > .visionnementProjet > div > div > h1 {
+  .content > .visionnementProjet > div:nth-child(1) > div > h1 {
     font-size: 1.5em;
   }
 }
 
 @media (min-width: 769px) and (max-width: 5075px) {
-  .content > .visionnementProjet > div > div > h1 {
+  .content > .visionnementProjet > div:nth-child(1) > div > h1 {
     font-size: 2.5em;
   }
 }
 
-.content > .visionnementProjet > div > div > img {
+.content > .visionnementProjet > div:nth-child(1) > div > img {
   margin-bottom: 4vh;
   width: 44vw;
   border-radius: 5px;
   -webkit-box-shadow: 5px 10px #888888;
           box-shadow: 5px 10px #888888;
+}
+
+.content > .visionnementProjet > div:nth-child(1) > div p {
+  margin-bottom: 3vh;
+}
+
+.content > .visionnementProjet > .visionnementProjetSortir {
+  position: fixed;
+  top: 25vh;
+  left: -18vw;
+  cursor: pointer;
+  background: #2f2f2f;
+  color: white;
+  padding: 15px;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  -webkit-transition: left 0.7s;
+  transition: left 0.7s;
 }
 
 .footer {
@@ -834,12 +886,39 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   grid-area: "footer";
+  background-color: black;
+  opacity: 0.85;
+  color: #2c2c2c;
+  height: 17vh;
+}
+
+.footer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer > div > div {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 @media (max-width: 768px) {
   .conteneur {
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
   }
 }
 

@@ -18,6 +18,7 @@ export class ProjetsManager {
         this.visionnementProjet = document.querySelector(".visionnementProjet");
         this.voileNoir = document.querySelector(".voileNoir");
         this.listeDivs = document.querySelector(".conteneurProjets").querySelectorAll(".boiteProjet");
+        this.visionnementProjetSortir = this.visionnementProjet.querySelector(".visionnementProjetSortir");
         this.nbDivs = this.listeDivs.length;
         for(let x = 0; x < this.nbDivs; x++){
             let div = this.listeDivs[x];
@@ -41,8 +42,9 @@ export class ProjetsManager {
         this.voileNoir.style.opacity = 0.9;
         this.voileNoir.style.pointerEvents = "all";
         document.body.style.overflowY = "hidden";
-        //document.body.style.marginBottom = "-130px";
         document.body.style.marginRight = "30px";
+        this.visionnementProjetSortir.style.left = "0vw";
+
         let boites = document.querySelectorAll(".boiteContent");
         for(let x = 0; x < boites.length; x++){
             boites[x].style.filter = "blur(2px)";
@@ -61,12 +63,14 @@ export class ProjetsManager {
         // Ajouter l'évènement pour refermer la page de visionnement
         e.stopPropagation();
         this.voileNoir.addEventListener("click", (ev)=>{this.fermerProjet(ev)});
+        this.visionnementProjetSortir.addEventListener("click", (ev)=>{this.fermerProjet(ev)});
     }
     fermerProjet(e){
         this.projetOuvert = false;
 
         // Enlever l'évènement
         this.voileNoir.removeEventListener("click", this.fermerProjet);
+        this.visionnementProjetSortir.removeEventListener("click", this.fermerProjet);
         e.stopPropagation();
 
         // Fermer visuellement
@@ -75,6 +79,7 @@ export class ProjetsManager {
         this.voileNoir.style.pointerEvents = "none";
         document.body.style.overflowY = "auto";
         document.body.style.marginRight = "-0px";
+        this.visionnementProjetSortir.style.left = "-18vw";
 
         // window.scrollBy(0, 25);
 
@@ -135,15 +140,40 @@ export class ProjetsManager {
         ));
         // Projet 02
         this.listeProjets.push(new Projet(
-            "Massacre à l'auberg-inn",
+            "Générateur de terrain avec OpenGL",
             `
                 <div>
                     <h1>Générateur de terrain avec OpenGL</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et est particulièrement développé dans un but éducatif.</p>
                     </div>
                 </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
+                    <div>
+                        <p>Le jeu original est fait en Flash tandis que les 3 mini-jeux de livré par navire sont en Typescript qui se compile en javascript avec la librairie Phaser. Tout d'abord, nous avons décidé de refaire entièrement la partie Flash à l'aide d'Unity en C#, par contre, refaire les jeux qui marchaient déjà aurait été une perte de temps.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.png" alt="">
+                    <div>
+                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication asynchrone entre le mini-jeu et Unity afin de transmettre des données à celui-ci. Bref, ce défi n'a pas été facile, mais j'ai beaucoup appris sur la façon le travail en entreprise en tant que programmeur de jeux et sur mon rôle en tant qu'expert dans mon domaine.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.png" alt="">
+                    <div>
+                        <p>Ce jeu est de CREO inc. et vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.png" alt="">
+                    <div>
+                        <p>Ce jeu est de CREO inc. et vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
+                    </div>
+                </div>
+                <div><p></p></div>
             `,
             "apercuProjet"+idCompte+".png"
         ));
@@ -205,15 +235,34 @@ export class ProjetsManager {
         ));
         // Projet 07
         this.listeProjets.push(new Projet(
-            "Jeu d'échec",
+            "Livré par Navire",
             `
                 <div>
-                    <h1>Jeu d'échec</h1>
+                    <h1>Livré par Navire</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et est particulièrement développé dans un but éducatif.</p>
                     </div>
                 </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p7_01.png" alt="">
+                    <div>
+                        <p>Le jeu original est fait en Flash tandis que les 3 mini-jeux de livré par navire sont en Typescript qui se compile en javascript avec la librairie Phaser. Tout d'abord, nous avons décidé de refaire entièrement la partie Flash à l'aide d'Unity en C#, par contre, refaire les jeux qui marchaient déjà aurait été une perte de temps.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p7_02.png" alt="">
+                    <div>
+                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication asynchrone entre le mini-jeu et Unity afin de transmettre des données à celui-ci. Bref, ce défi n'a pas été facile, mais j'ai beaucoup appris sur la façon le travail en entreprise en tant que programmeur de jeux et sur mon rôle en tant qu'expert dans mon domaine.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/projets/projet${idCompte+1}/p7_03.png" alt="">
+                    <div>
+                        <p>Ce jeu est de CREO inc. et vous pouvez présentement le trouver sur l'apple store et sur l'android store en recherchant 'Livré par navire'.</p>
+                    </div>
+                </div>
+                <div><p></p></div>
             `,
             "apercuProjet"+idCompte+".png"
         ));

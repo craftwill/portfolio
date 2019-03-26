@@ -40,7 +40,8 @@ body{
     justify-content: center;
     opacity: 1;
     flex: 1 1 100%;
-    font-size: 33px;
+    margin-top: 7vh;
+    @include fonte-texte-header;
 }
 .content{
     flex: grid;
@@ -70,12 +71,15 @@ body{
     &>.portrait{
         opacity: 1;
         grid-area: "portrait";
+        margin-top: 6vh;
+        margin-bottom: 299px;
         &>img{
             max-width: 250px;
             max-height: 333px;
             width: 80%;
             height: 80%;
             border-radius: 50%;
+            margin-bottom: 15px;
         }
         &>p{
             font-size: 22px;
@@ -83,30 +87,41 @@ body{
     }
     &>.description{
         grid-area: "description";
+        margin-bottom: 35vh;
+        border-top: 1px solid rgb(194, 194, 194);
+        padding-top: 2vh;
         &>h2{
-            font-size: 25px;
+            margin-bottom: 3vh;
+            align-self: flex-start;
+            font-size: 33px;
         }
         &>p{
             padding: {
                 top: 15px;
+                left: 35px;
             }
         }
     }
     &>.projets{
         grid-area: "projets";
+        border-top: 1px solid rgb(194, 194, 194);
+        padding-top: 2vh;
         &>h2{
-            font-size: 25px;
+            align-self: flex-start;
+            margin-bottom: 6vh;
+            font-size: 33px;
         }
         &>.conteneurProjets{
             display: grid;
             grid-template: auto auto;
             width: 95%;
+            max-width: 950px;
             margin: {
                 top: 15px;
             }
             &>div{
                 opacity: 0;
-
+                
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
@@ -125,7 +140,7 @@ body{
                     left: 0%;
                     height: 0px;
                     font-size: 15px;
-                    transition: opacity 0.4s;
+                    transition: opacity 0.4s, filter 0.4s;
                     content: "Appuyer pour voir";
                 }
 
@@ -147,7 +162,7 @@ body{
                     left: 0px;
                     filter: brightness(100%);
                     width: 100%;
-                    transition: opacity 0.4s;
+                    transition: opacity 0.4s, filter 0.4s;
                 }
                 
                 &>.titre_projet{
@@ -194,7 +209,7 @@ body{
         &::-webkit-scrollbar{
             display: none;
         }
-        &>div{
+        &>div:nth-child(1){
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -217,8 +232,23 @@ body{
                     
                     box-shadow: 5px 10px #888888;
                 }
+                & p{
+                    margin-bottom:3vh;
+                }
                 margin-bottom: 15px;
             }
+        }
+        &>.visionnementProjetSortir{
+            position: fixed;
+            top: 25vh;
+            left: -18vw;
+            cursor: pointer;
+            background: rgb(47, 47, 47);
+            color: white;
+            padding: 15px;
+            padding-top: 25vh;
+            padding-bottom: 25vh;
+            transition: left 0.7s;
         }
     }
 }
@@ -226,6 +256,24 @@ body{
     display: flex;
     justify-content: center;
     grid-area: "footer";
+    background-color: black;
+    opacity: 0.85;
+    color: rgb(44, 44, 44);
+    height: 17vh;
+    &>div{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        &>div{
+            padding: {
+                left: 15px;
+                right: 15px;
+                top: 5px;
+                bottom: 5px;
+            }
+        }
+    }
 }
 //////////////////////////////////////
 /////////////// MEDIAS ///////////////
@@ -234,8 +282,8 @@ body{
 @media (max-width: 768px) {
     .conteneur{
         margin: {
-            left: 5vw;
-            right: 5vw;
+            left: 2vw;
+            right: 2vw;
         }
     }
 }

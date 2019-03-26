@@ -57,7 +57,7 @@ export class P5Sketch {
                 if(p.arbreFractal.arreterDePousser)
                     return;
                 p.background(255, 255, 255);
-                console.log(p.arbreFractal);
+                //console.log(p.arbreFractal);
                 // Rendu de l'arbre
                 p.arbreFractal.dessinerArbre();
             }
