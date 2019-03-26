@@ -23,35 +23,10 @@ export class P5Sketch {
                     htmlCanvas.height = window.innerHeight;
                     p.dessiner();
                 }
-
-                /*
-                START HERE
-                */
-
-                /*function Drop(){
-                    this.x = p.random(window.innerWidth);
-                    this.y = p.random(-200, 700);
-                    this.z = p.random(1, 30);
-                    this.yspeed = p.random(3, 35)/(this.z/1.4);
-                    this.longueur = p.random(130, 50);
-                    this.fall = function(){
-                        this.y += this.yspeed;
-                        if(this.y > p.height)
-                            this.y = p.random(window.innerWidth);
-                    }
-                    this.show = function(){
-                        p.stroke(210 + this.z, 210 - this.z, 210 - this.z);
-                        p.line(this.x , this.y, this.x, this.y+this.longueur);
-                    }
-                }
-
-                // Créationd des gouttes
-                this.drops = [];
-                for(var x = 0; x < 100; x++){
-                    this.drops.push(new Drop());
-                }
-                */
+                
                 p.arbreFractal = new ArbreFractal(p);
+                // Arrange un problème sur téléphone
+                resizeCanvas();
             }
             p.draw = function () {
                 if(p.arbreFractal.arreterDePousser)
