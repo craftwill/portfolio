@@ -12,6 +12,7 @@ class Projet {
 // Contient les projets et les fonctions permettant d'y accéder
 export class ProjetsManager {
     constructor(){
+        this.surMobile = 'ontouchstart' in document.documentElement;
         this.projetOuvert = false;
         this.listeProjets = [];
         this.contentDiv = document.querySelector(".content");
@@ -43,11 +44,14 @@ export class ProjetsManager {
         this.voileNoir.style.pointerEvents = "all";
         document.body.style.overflowY = "hidden";
         //document.body.style.marginRight = "30px";
-        this.visionnementProjetSortir.style.left = "0vw";
+        this.visionnementProjetSortir.style.left = "5vw";
 
         let boites = document.querySelectorAll(".boiteContent");
-        for(let x = 0; x < boites.length; x++){
-            boites[x].style.filter = "blur(2px)";
+        // Optimisation pour mobile
+        if(this.surMobile == false){
+            for(let x = 0; x < boites.length; x++){
+                boites[x].style.filter = "blur(2px)";
+            }
         }
         for(let x = 0; x < this.nbDivs; x++){
             let imgElm = this.listeDivs[x].querySelector("img");
@@ -84,8 +88,11 @@ export class ProjetsManager {
         // window.scrollBy(0, 25);
 
         let boites = document.querySelectorAll(".boiteContent");
-        for(let x = 0; x < boites.length; x++){
-            boites[x].style.filter = "blur(0px)";
+        // Optimisation pour mobile
+        if(this.surMobile == false){
+            for(let x = 0; x < boites.length; x++){
+                boites[x].style.filter = "blur(0px)";
+            }
         }
         for(let x = 0; x < this.nbDivs; x++){
             let imgElm = this.listeDivs[x].querySelector("img");
