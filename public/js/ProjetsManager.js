@@ -124,28 +124,19 @@ export class ProjetsManager {
                     <div>
                         <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
                     </div>
-                </div>
-            
-            
-                <div>
+
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
                         <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
                     </div>
-                </div>
-            
-            
-                <div>
+
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
                         <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
                     </div>
-                </div>
-            
-            
-                <div>
+
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
