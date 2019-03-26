@@ -35,6 +35,10 @@ export class ProjetsManager {
                 .content > .visionnementProjet > div:nth-child(1) > div{
                     margin-bottom: 90vh;
                 }
+                .content > .visionnementProjet > div:nth-child(1) > div:last-child{
+                    margin-top: 10vh;
+                    margin-bottom: 10vh;
+                }
             `;
             document.body.appendChild(node);
         }
