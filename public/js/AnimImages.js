@@ -30,10 +30,10 @@ export class AnimImages{
             if(this.divsProjets[x].animJouer == false){
                 animationFinie = false;
                 // Le décalage est plus grand pour la version mobile pour que toute les images puisse apparaitres
-                let decalageY = (!Utils.mediaMatch(540)) ? img.height + 360 : img.height + 350;
+                let decalageY = -800 - window.innerHeight/2;//(!Utils.mediaMatch(540)) ? img.height - window.innerHeight/2 : img.height - 350;
                 // Le décalage est moin grand en plein écran
                 if(Utils.mediaMatch(1025))
-                    decalageY = 380;
+                    decalageY = -(1000 - window.innerHeight/2);
                 if(scrollY > img.offsetTop - decalageY){
                     this.animerImage(this.divsProjets[x]);
                 }
