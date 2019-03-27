@@ -1,3 +1,10 @@
+
+/*
+* William Gingras
+* 2019/03/27
+* Classe qui Gère l'ouverture du menu de visionnement des projets et l'affichage du contenu de ces projets
+*/
+
 var idCompte = 0;
 // Structure d'un objet 'Projet'
 class Projet {
@@ -20,7 +27,9 @@ export class ProjetsManager {
         this.voileNoir = document.querySelector(".voileNoir");
         this.listeDivs = document.querySelector(".conteneurProjets").querySelectorAll(".boiteProjet");
         this.visionnementProjetSortir = this.visionnementProjet.querySelector(".visionnementProjetSortir");
+        this.boitesContents = document.querySelectorAll(".boiteContent");
         this.nbDivs = this.listeDivs.length;
+        // Donne les évènements à chaque projet
         for(let x = 0; x < this.nbDivs; x++){
             let div = this.listeDivs[x];
             div.setAttribute("data-id", (x+1));
@@ -28,8 +37,8 @@ export class ProjetsManager {
             div.addEventListener("click", (e)=>{this.ouvrirProjet(e, div);});
         }
         this.initialisationProjets();
+        // Injection de style css pour arranger un problème d'espacement lié au visionneur de projet en mobile
         if(this.surMobile){
-            // Injection de style css pour arranger un problème d'espacement lié au visionneur de projet
             var node = document.createElement("style");
             node.innerHTML = `
                 .content > .visionnementProjet > div:nth-child(1) > div:last-child {
@@ -39,6 +48,7 @@ export class ProjetsManager {
             document.body.appendChild(node);
         }
     }
+    // Ouvre le projet spécifié
     ouvrirProjet(e, div){
         this.projetOuvert = !this.projetOuvert;
 
@@ -59,11 +69,11 @@ export class ProjetsManager {
         //document.body.style.marginRight = "30px";
         this.visionnementProjetSortir.style.left = "0vw";
 
-        let boites = document.querySelectorAll(".boiteContent");
-        // Optimisation pour mobile
+        // Optimisation pour mobile, flou des boiteContent
+        let nbBoites = this.boitesContents.length;
         if(this.surMobile == false){
-            for(let x = 0; x < boites.length; x++){
-                boites[x].style.filter = "blur(2px)";
+            for(let x = 0; x < nbBoites; x++){
+                this.boitesContents[x].style.filter = "blur(2px)";
             }
         }
         for(let x = 0; x < this.nbDivs; x++){
@@ -82,6 +92,7 @@ export class ProjetsManager {
         this.voileNoir.addEventListener("click", (ev)=>{this.fermerProjet(ev)});
         this.visionnementProjetSortir.addEventListener("click", (ev)=>{this.fermerProjet(ev)});
     }
+    // Ferme le visionneur de projet et rétablit la page à son état normal
     fermerProjet(e){
         this.projetOuvert = false;
 
@@ -100,11 +111,11 @@ export class ProjetsManager {
 
         // window.scrollBy(0, 25);
 
-        let boites = document.querySelectorAll(".boiteContent");
-        // Optimisation pour mobile
+        let nbBoites = this.boitesContents.length;
+        // Optimisation pour mobile, flou des boiteContent
         if(this.surMobile == false){
-            for(let x = 0; x < boites.length; x++){
-                boites[x].style.filter = "blur(0px)";
+            for(let x = 0; x < nbBoites; x++){
+                this.boitesContents[x].style.filter = "blur(0px)";
             }
         }
         for(let x = 0; x < this.nbDivs; x++){
@@ -113,9 +124,11 @@ export class ProjetsManager {
             this.listeDivs[x].style.pointerEvents = "all";
         }
     }
+    // Retourne un projet par son identifiant
     getProjetParID(id){
         return this.listeProjets.find((p)=>{return (p.id == id)});
     }
+    // Initialise les données des projets un peu comme du JSON
     initialisationProjets(){
         // Projet 01
         this.listeProjets.push(new Projet(
@@ -224,7 +237,7 @@ export class ProjetsManager {
             "apercuProjet"+idCompte+".png"
         ));
         // Projet 07
-        this.listeProjets.push(new Projet(
+        /*this.listeProjets.push(new Projet(
             "Livré par Navire",
             `
                 <div>
@@ -293,6 +306,6 @@ export class ProjetsManager {
                 </div>
             `,
             "apercuProjet"+idCompte+".png"
-        ));
+        ));*/
     }
 }

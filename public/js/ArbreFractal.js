@@ -22,7 +22,7 @@ class Feuille {
         p.ellipse(this.pos.x, this.pos.y, 4, 4);
     }
 }
-
+/* Une branche représente l'aspect graphique de l'arbre, celle-ci tente de pousser en se divisant vers les feuilles */
 class Branche {
     constructor(p, parent, pos, dir){
         this.p = p;
