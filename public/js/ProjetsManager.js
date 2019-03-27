@@ -28,6 +28,7 @@ export class ProjetsManager {
         this.listeDivs = document.querySelector(".conteneurProjets").querySelectorAll(".boiteProjet");
         this.visionnementProjetSortir = this.visionnementProjet.querySelector(".visionnementProjetSortir");
         this.boitesContents = document.querySelectorAll(".boiteContent");
+        this.footer = document.querySelector("footer");
         this.nbDivs = this.listeDivs.length;
         // Donne les évènements à chaque projet
         for(let x = 0; x < this.nbDivs; x++){
@@ -66,6 +67,8 @@ export class ProjetsManager {
         this.voileNoir.style.opacity = 0.9;
         this.voileNoir.style.pointerEvents = "all";
         document.body.style.overflowY = "hidden";
+        // Règle un problème d'affichage avec le footer qui se place devant le visionneur
+        this.footer.style.zIndex = "-2";
         //document.body.style.marginRight = "30px";
         this.visionnementProjetSortir.style.left = "0vw";
 
@@ -106,6 +109,12 @@ export class ProjetsManager {
         this.voileNoir.style.opacity = 0;
         this.voileNoir.style.pointerEvents = "none";
         document.body.style.overflowY = "auto";
+        
+        // Règle un problème d'affichage avec le footer qui se place devant le visionneur
+        setTimeout(() => {
+            this.footer.style.zIndex = "0";
+        }, 800);
+
         //document.body.style.marginRight = "-0px";
         this.visionnementProjetSortir.style.left = "-18vw";
 
@@ -181,15 +190,18 @@ export class ProjetsManager {
         ));
         // Projet 03
         this.listeProjets.push(new Projet(
-            "Défend ton château!",
+            "Défends ton château!",
             `
                 <div>
-                    <h1>Défend ton château!</h1>
+                    <h1>Défends ton château!</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Défendez votre château dans ce jeu de défense par vague!</p>
+                        <p>Voici un jeu que j'ai créé avec Unity dans mes temps libres. Vous avez volé la première copie d'Half-Life 3, mais en faisant cela, vous vous êtes mis toute la terre à dos! Vous décidez donc de vous réfugier dans un château de votre défunt oncle pour défendre votre peau.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
+                    <div>
+                        <p>Défendez votre château afin de survivre aux vagues d'ennemis de plus en plus nombreux, rapides et forts à l'aide de vos pouvoirs et de votre souris qui vous permet de tuer les ennemis en les envoyant en l'air pour qu'ils s'écrasent ensuite violemment au sol!</p>
+                    </div>
                 </div>
             `,
             "apercuProjet"+idCompte+".png"
@@ -202,7 +214,16 @@ export class ProjetsManager {
                     <h1>Deadly Nightmare</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>Deadly Nightmare est le résultat de mon Travail Pratique dans le cours de programmation d'animation l'en Techniques d'intégration multimédia. Le jeu est fait avec Unity et j'ai programmé la majorité des fonctionnalités tandis que mon collègue s'est occupé de l'architecture du niveau et de la modélisation.</p>
+                    </div>
+                    <div>
+                        <p>L'idée de faire un tel jeu m'a traversé l'esprit surtout pour tester mes compétences en programmation. Ainsi, j'ai réussi à intégrer environs 11 fusils qui ont chacun leur propre modèle de recul et d'animation de recharge.</p>
+                    </div>
+                    <div>
+                        <p>J'ai aussi compris comment programmer un système de difficulté pour l'apparition des zombies, l'interaction avec les portes et l'achat d'armes sur les murs et aussi le démembrement des zombies avec le tir des fusils.</p>
+                    </di>
+                    <div>
+                        <p>Bref, ce jeu m'a surtout fait comprendre ce que je pouvais faire sur Unity en 3D à l'aide de la programmation et ce fût une expérience enrichissante pour apprendre de mes erreurs.</p>
                     </div>
                 </div>
             `,
@@ -210,13 +231,16 @@ export class ProjetsManager {
         ));
         // Projet 05
         this.listeProjets.push(new Projet(
-            "Gladiatorio.club",
+            "Gladiatorio.fun",
             `
                 <div>
-                    <h1>Gladiatorio.club</h1>
+                    <h1>Gladiatorio.fun</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>Gladiatorio fun est un jeu que j'ai développé dans mes temps libres en Phaser avec Node Js, Socket.io et Express. Le jeu est plus un prototype qu'autre chose, il contient plusieurs bugs et le code est mal écrit. Cependant je suis fier d'avoir réussi à programmer un tel jeu par mes propres moyens.</p>
+                    </div>
+                    <div>
+                        <p>C'est également grace à ce projet que j'ai appris à mettre en ligne une application NodeJS à l'aide de Heroku.com. Vous pouvez y jouer ici si vous êtes au moins deux personne: <a href=http://gladiatorio.fun>gladiatorio.fun</a>. Avec les touches 1-2-3 vous pouvez changer d'arme et vous pouvez frapper les autres joueurs avec la souris.</p>
                     </div>
                 </div>
             `,
@@ -230,14 +254,17 @@ export class ProjetsManager {
                     <h1>Woodie clone</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>Woodie est un jeu sur l'Apple store et je me suis demandé un jour si je pourrais le refaire en Javascript sans librairies. C'est donc ce que j'ai fait en 2 jours pendant une fin de semaine et j'ai même réussi à le rendre utilisable en version mobile. Le but est de survivre le plus longtemps possible en fesant éclater des colonnes et des rangées de pièces.</p>
+                    </div>
+                    <div>
+                        <p>Vous pouvez y jouer ici: <a href="http://woodie-remake.herokuapp.com/">woodie clone</a></p>
                     </div>
                 </div>
             `,
             "apercuProjet"+idCompte+".png"
         ));
         // Projet 07
-        /*this.listeProjets.push(new Projet(
+        this.listeProjets.push(new Projet(
             "Livré par Navire",
             `
                 <div>
@@ -266,7 +293,7 @@ export class ProjetsManager {
             "apercuProjet"+idCompte+".png"
         ));
         // Projet 08
-        this.listeProjets.push(new Projet(
+        /*this.listeProjets.push(new Projet(
             "Matte painting 01",
             `
                 <div>
