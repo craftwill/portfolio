@@ -174,8 +174,9 @@ export class ProjetsManager {
                     <h1>Défend ton château!</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>Défendez votre château dans ce jeu de défense par vague!</p>
                     </div>
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
                 </div>
             `,
             "apercuProjet"+idCompte+".png"

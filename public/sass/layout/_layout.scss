@@ -123,8 +123,9 @@ body{
             margin: {
                 top: 15px;
             }
-            &>div{
+            &>.boiteProjet{
                 opacity: 0;
+                margin-bottom: 2vh;
                 
                 display: flex;
                 justify-content: center;
