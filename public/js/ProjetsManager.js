@@ -125,26 +125,19 @@ export class ProjetsManager {
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>Massacre à l'Auberg-inn est un jeu auquel j'ai participé à l'idéation, à l'intégration et surtout à la programmation. Nous étions une équipe de 7 lors du Gamejam de Valleyfield en janvier 2019 et nous avons fini en 2ème place parmi 14 équipes ce qui nous à octroyé un prix de 750$.</p>
                     </div>
-
-                    <h1>Massacre à l'auberg-inn</h1>
-                    <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.jpg" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>Pour résumer, c'est un jeu de combat de style beat em' up où le joueur incarne un soulons qui veux continuer à boire tandis que les gens autour de lui tente de le calmer.</p>
                     </div>
-
-                    <h1>Massacre à l'auberg-inn</h1>
-                    <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.jpg" alt="">
                     <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
+                        <p>S'ensuit ensuite un combat sanglant par vagues où il est possible de rammasser des armes et où il faut continuellement boire pour rester en vie. De plus, si le joueur boit trop, il se met à vomir et il est ainsi paralysé pendant quelques secondes.</p>
                     </div>
-
-                    <h1>Massacre à l'auberg-inn</h1>
-                    <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
-                    <div>
-                        <p>Ils sont les fiers représentants de la lignées des vastayans et ils sont aussi un couple d'amoureux fou, ils se disent souvent qu'ils seront la cause de la mort d'un ou de l'autre, mais les deux s'entendent pour dire qu'ils ne sont pas contre l'idée.</p>
-                    </div>
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.jpg" alt="">
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_05.jpg" alt="">
+                    <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.jpg" alt="">
                 </div>
             `,
             "apercuProjet"+idCompte+".png"
