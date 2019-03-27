@@ -172,15 +172,24 @@ export class ProjetsManager {
                     <h1>Générateur de terrain avec OpenGL</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et est particulièrement développé dans un but éducatif.</p>
+                        <p>Ceci est mon projet de fin d'études en Techniques d'intégrations multimédia. J'ai créé un prototype qui produit un terrain généré de manière procédurale à l’aide de technologies qui n’ont jamais été vue dans ma technique.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
                     <div>
-                        <p>Le jeu original est fait en Flash tandis que les 3 mini-jeux de livré par navire sont en Typescript qui se compile en javascript avec la librairie Phaser. Tout d'abord, nous avons décidé de refaire entièrement la partie Flash à l'aide d'Unity en C#, par contre, refaire les jeux qui marchaient déjà aurait été une perte de temps.</p>
+                        <p>L’utilisateur peut contrôler une caméra pour se déplacer et visualiser la génération du terrain. Il a également le choix de personnaliser la génération du terrain. </p>
+                    </div>
+                    <div>
+                        <p>Mon but était de montrer que je suis capable de programmer l’affichage de graphiques sans support autre qu’OpenGL et LWJGL qui sont de bien plus bas niveau que Unity qui offre déjà le rendu d’objets 3D, de textures, d’effets visuels complexes et plus.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.png" alt="">
                     <div>
-                        <p>Nous avons donc cherché un plugin externe qui nous permet de simuler une page web directement dans Unity, ce qui nous a ensuite permis de faire fonctionner les 3 mini-jeux dans Unity alors qu'ils même qu'ils sont en Javascript. Nous avons eu beaucoup de problèmes de performances et il a aussi fallu permettre à Unity de faire une communication as.</p>
+                        <p>J'ai suivi beaucoup de tutoriels différents pour arriver à ce résultat dont <a href="https://www.youtube.com/user/ThinMatrix">ThinMatrix</a> qui est la source principale de mes sources. J'ai vraiment beaucoup appris dans la façon dont un projet doit être structuré en Java de façon orienté objet.</p>
+                    </div>
+                    <div>
+                        <p>Par exemple, il y a la classe Entity qui s'occupe du rendu de celui-ci en appelant des méthodes du moteur de rendu qui est lui aussi divisé en plusieurs classes. Toutes mes classes sont encapsulées pour empêcher le programmeur de devoir comprendre tout ce qui se passe en arrière.</p>
+                    </div>
+                    <div>
+                        <p>Ce que je trouve le plus intéressant avec mon projet, c'est aussi qu'il est presque modulaire dans le sens où je peux le reprendre et l'utiliser comme un moteur de jeu personnalisé.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.png" alt="">
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.png" alt="">
