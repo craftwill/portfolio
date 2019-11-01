@@ -190,6 +190,56 @@ body{
             }
         }
     }
+    &>.visionnementImage{
+        z-index: 3;
+        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        background-color: none;
+
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        margin-top:-50vh;
+        margin-left:-50vw;
+        opacity: 1.0;
+        top: 50%;
+        left: 50%;
+        pointer-events: none;
+
+        &>div{
+            z-index: 4;
+        
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+    
+            color: black;
+    
+            position: fixed;
+            width: 94vw;
+            height: 94vh;
+            opacity: 0.0;
+    
+            pointer-events: none;
+    
+            transition: opacity 0.8s;
+            background-image: url("../images/projets/apercuProjet9.jpg");
+    
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+    
+            top: 50%;
+            left: 50%;
+    
+            margin-top:-47vh; /* this is half the height of your div*/  
+            margin-left:-47vw; /*this is half of width of your div*/
+        }
+        
+    }
     &>.visionnementProjet{
         z-index: 3;
 
