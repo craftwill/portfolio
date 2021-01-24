@@ -53,10 +53,10 @@ body{
         align-items: center;
 
         opacity: 1;
-        min-height: 200px;
+        min-height: 100px;
         width: 100%;
         margin: {
-            top: 25px;
+            top: 0px;
             bottom: 25px;
         }
         transition: filter 0.7s;
@@ -64,13 +64,13 @@ body{
     }
     &>.espace{
         grid-area: "espace";
-        height: 300px;
+        height: 100px;
     }
     &>.portrait{
         opacity: 1;
         grid-area: "portrait";
         margin-top: 6vh;
-        margin-bottom: 299px;
+        margin-bottom: 130px;
         &>img{
             max-width: 250px;
             max-height: 333px;
@@ -86,20 +86,30 @@ body{
     }
     &>.description{
         grid-area: "description";
-        margin-bottom: 35vh;
+        margin-bottom: 10vh;
         border-top: 1px solid rgb(194, 194, 194);
         border-radius: 8px;
         padding-top: 4vh;
+        &>div{
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            margin-top: 2vh;
+            &>ul {
+                list-style-position: inside;
+                margin-left: 55px;
+            }
+            &>p{
+                padding: {
+                    top: 15px;
+                    left: 35px;
+                }
+            }
+        }
         &>h2{
             margin-bottom: 3vh;
             align-self: flex-start;
             font-size: 33px;
-        }
-        &>p{
-            padding: {
-                top: 15px;
-                left: 35px;
-            }
         }
     }
     &>.projets{
@@ -279,13 +289,14 @@ body{
                     text-align: center;
                     @include fonte-texte-titre-visionneur;
                 }
-                &>img{
+                &>img, &>iframe{
                     margin-bottom:4vh;
                     width: 44vw;
                     border-radius: 5px;
                     
                     box-shadow: 5px 10px #888888;
                 }
+                
                 & p {
                     display: block;
                     min-height: 1em;

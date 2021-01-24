@@ -8,11 +8,11 @@
 var idCompte = 0;
 // Structure d'un objet 'Projet'
 class Projet {
-    constructor(nom, description, srcImageApercu, srcImages){
+    constructor(nom, description, srcImageApercu, videoEmbedUrl = ""){
         this.nom = nom;
         this.description = description;
         this.srcImageApercu = srcImageApercu;
-        this.srcImages = srcImages;
+        this.videoEmbedUrl = videoEmbedUrl;
         this.id = ++idCompte;
     }
 }
@@ -180,6 +180,10 @@ export class ProjetsManager {
     getProjetParID(id){
         return this.listeProjets.find((p)=>{return (p.id == id)});
     }
+    getIFrameFromEmbedURL(embedURL){
+        return `<iframe width="720" height="500" src="${embedURL}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+    //${this.getIFrameFromEmbedURL("https://www.youtube.com/embed/-k10esRs5so")}
     // Initialise les données des projets un peu comme du JSON
     initialisationProjets(){
         // Projet 01
@@ -190,16 +194,13 @@ export class ProjetsManager {
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Massacre à l'Auberg-inn est un jeu auquel j'ai participé à l'idéation, à l'intégration et surtout à la programmation. Nous étions une équipe de 7 lors du Gamejam de Valleyfield en janvier 2019 et nous avons fini en 2ème place parmi 14 équipes ce qui nous à octroyé un prix de 750$.</p>
+                        <p>Dans l'auberge, les gens tentent en vain de sortir un ivrogne têtu. Survivez le plus longtemps possible en ramassant toutes sortes d'armes (incluant la magnifique et gracieuse Katana). N'oubliez pas de prendre un coup en chemin, mais attention, buvez trop et vous serez paralysé pendant quelques instants!</p>
+                    </div>
+                    <div>
+                        <p>Massacre à l'Auberg-inn est le résultat de mon premier Gamejam en équipe organisé au collège de Valleyfield et où nous avons remporté la deuxième place!</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.jpg" alt="">
-                    <div>
-                        <p>Pour résumer, c'est un jeu de combat de style beat em' up où le joueur incarne un soulons qui veux continuer à boire tandis que les gens autour de lui tente de le calmer.</p>
-                    </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.jpg" alt="">
-                    <div>
-                        <p>S'ensuit ensuite un combat sanglant par vagues où il est possible de rammasser des armes et où il faut continuellement boire pour rester en vie. De plus, si le joueur boit trop, il se met à vomir et il est ainsi paralysé pendant quelques secondes.</p>
-                    </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.jpg" alt="">
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_05.jpg" alt="">
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.jpg" alt="">
@@ -213,9 +214,10 @@ export class ProjetsManager {
             `
                 <div>
                     <h1>Générateur de terrain avec OpenGL</h1>
+
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ceci est mon projet de fin d'études en Techniques d'intégrations multimédia. J'ai créé un prototype qui produit un terrain généré de manière procédurale à l’aide de technologies qui n’ont jamais été vue dans ma technique.</p>
+                        <p>Voici mon projet de fin d'étude en Techniques d'intégrations multimédia. J'ai créé un prototype qui produit un terrain généré de manière procédurale à l’aide de technologies qui n’ont jamais été vue dans ma technique.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
                     <div>
@@ -226,7 +228,7 @@ export class ProjetsManager {
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.png" alt="">
                     <div>
-                        <p>J'ai suivi beaucoup de tutoriels différents pour arriver à ce résultat dont <a href="https://www.youtube.com/user/ThinMatrix">ThinMatrix</a> qui est la source principale de mes sources. J'ai vraiment beaucoup appris dans la façon dont un projet doit être structuré en Java de façon orienté objet.</p>
+                        <p>J'ai suivi beaucoup de tutoriels différents pour arriver à ce résultat dont <a href="https://www.youtube.com/user/ThinMatrix">ThinMatrix</a> qui en est la source principale. J'ai vraiment beaucoup appris dans la façon dont un projet doit être structuré en Java en orienté objet.</p>
                     </div>
                     <div>
                         <p>Par exemple, il y a la classe Entity qui s'occupe du rendu de celui-ci en appelant des méthodes du moteur de rendu qui est lui aussi divisé en plusieurs classes. Toutes mes classes sont encapsulées pour empêcher le programmeur de devoir comprendre tout ce qui se passe en arrière.</p>
@@ -289,10 +291,10 @@ export class ProjetsManager {
                     <h1>Gladiatorio.fun</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Gladiatorio est un jeu que j'ai développé dans mes temps libres en Phaser avec NodeJS, Socket.io et Express. Le jeu est plus un prototype qu'autre chose, il contient plusieurs bugs et le code est mal écrit. Cependant je suis fier d'avoir réussi à programmer un tel jeu par mes propres moyens.</p>
+                        <p>Gladiatorio est un prototype de jeu fonctionnel de combat en arena. il est programmé en Javascript avec la librairie Phaser. Le serveur est écrit en NodeJS (Javascript).</p>
                     </div>
                     <div>
-                        <p>C'est également grace à ce projet que j'ai appris à mettre en ligne une application NodeJS à l'aide d'Herokuapp.com. Vous pouvez y jouer ici si vous êtes au moins deux personne: <a href=http://gladiatorio.fun>gladiatorio.fun</a>. Avec les touches 1-2-3 vous pouvez changer d'arme et vous pouvez frapper les autres joueurs avec la souris.</p>
+                        <p>Vous pouvez y jouer ici si vous êtes au moins deux personne: <a href=http://gladiatorio.fun>gladiatorio.fun</a>. Avec les touches 1-2-3 vous pouvez changer d'arme et vous pouvez frapper les autres joueurs avec la souris.</p>
                     </div>
                 </div>
             `,
@@ -306,10 +308,10 @@ export class ProjetsManager {
                     <h1>Woodie clone</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Woodie est un jeu sur l'Apple store et je me suis demandé un jour si je pourrais le refaire en Javascript sans librairies. C'est donc ce que j'ai fait durant une fin de semaine. J'ai aussi réussi à le rendre utilisable en version mobile. Le but est de survivre le plus longtemps possible en fesant éclater des colonnes et des rangées de pièces.</p>
+                        <p>Ce jeu est une copie d'un jeu de l'app store nommé Woodie. Il à été programmé entièrement en Javascript sans l'utilisation de librairies externes. Le but est de survivre le plus longtemps possible en faisant éclater des colonnes et des rangées de pièces.</p>
                     </div>
                     <div>
-                        <p>Vous pouvez y jouer ici: <a href="http://woodie-remake.herokuapp.com/">woodie clone</a></p>
+                        <p>Vous pouvez y jouer ici: <a href="https://william-games.herokuapp.com/woodie.html">woodie clone</a></p>
                     </div>
                 </div>
             `,
@@ -323,7 +325,7 @@ export class ProjetsManager {
                     <h1>Livré par Navire</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et est particulièrement développé dans un but éducatif.</p>
+                        <p>J'ai eu, pendant l'été 2018, la chance de travailler avec CREO inc. en tant que programmeur Unity. Le projet sur lequel j'ai travaillé tout au long est la refonte de 'livré par navire' qui est en fait une section d'un jeu multijoueur nommé Science en Jeu. Le jeu cible une audience jeune et apprend les bases de la livraison par bateau des marchandises au joueur.</p>
                     </div>
 
                     <img src="images/projets/projet${idCompte+1}/p7_01.png" alt="">
@@ -344,35 +346,7 @@ export class ProjetsManager {
             `,
             "apercuProjet"+idCompte+".png"
         ));
-        // Projet 08
-        this.listeProjets.push(new Projet(
-            "Matte painting 01",
-            `
-                <div>
-                    <h1>Matte painting 01</h1>
-                    <img src="images/projets/apercuProjet${idCompte+1}.jpg" alt="">
-                    <div>
-                        <p>Un matte painting réalisé durant mon premier cours de photoshop à l'aide de pinceaux.</p>
-                    </div>
-                </div>
-            `,
-            "apercuProjet"+idCompte+".png"
-        ));
-        // Projet 09
-        this.listeProjets.push(new Projet(
-            "Matte painting 02",
-            `
-                <div>
-                    <h1>Matte painting 02</h1>
-                    <img src="images/projets/apercuProjet${idCompte+1}.jpg" alt="">
-                    <div>
-                        <p>Un matte painting réalisé pour le plaisir de créer un simple contraste d'éclairage.</p>
-                    </div>
-                </div>
-            `,
-            "apercuProjet"+idCompte+".png"
-        ));
-        // Projet 10
+        // Projet 8
         this.listeProjets.push(new Projet(
             "Concept - Capitalist alien$",
             `
@@ -380,7 +354,7 @@ export class ProjetsManager {
                     <h1>Concept - Capitalist alien$</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Concept d'un jeu effectué dans mes temps libres. Le joueur doit gérer son entreprise qui commence avec une alien venu de l'espace afin de faire fortune. Il commence son aventure en tant que classique vendeur de limonade, mais qui sait jusqu'où il ira pour continuer de s'enrichir...</p>
+                        <p>Concept de jeu pour PC. Un alien venu de l'espace cherche à faire fortune sur terre. Il commence son aventure en tant que vendeur de limonade (classique), mais qui sait jusqu'où il ira afin de continuer à s'enrichir...</p>
                     </div>
                 </div>
             `,

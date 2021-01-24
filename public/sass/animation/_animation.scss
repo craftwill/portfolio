@@ -52,7 +52,7 @@
         opacity: 0.5;
     }
     to{
-        opacity: 0.07;
+        opacity: 0.02;
     }
 }
 
@@ -68,12 +68,12 @@
 }
 
 .animCanvasOuverture{
-    animation: animCanvasOuverture 5s forwards;
+    animation: animCanvasOuverture 3s forwards; //5
 }
 
 .animChargementOuverture{
     opacity: 0;
-    animation: animChargementOuv 4s forwards;
+    animation: animChargementOuv 2s forwards; // 4
 }
 
 .animImage{
