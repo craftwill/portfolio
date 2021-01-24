@@ -194,7 +194,7 @@ export class ProjetsManager {
                     <h1>Massacre à l'auberg-inn</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Dans l'auberge, les gens tentent en vain de sortir un ivrogne têtu. Survivez le plus longtemps possible en ramassant toutes sortes d'armes (incluant la magnifique et gracieuse Katana). N'oubliez pas de prendre un coup en chemin, mais attention, buvez trop et vous serez paralysé pendant quelques instants!</p>
+                        <p>Dans l'auberge, les gens tentent en vain de sortir un ivrogne têtu que vouz incarnez. Survivez le plus longtemps possible en ramassant toutes sortes d'armes (incluant le magnifique et gracieux Katana). N'oubliez pas de prendre un coup en chemin, mais attention, buvez trop et vous serez paralysé pendant quelques instants!</p>
                     </div>
                     <div>
                         <p>Massacre à l'Auberg-inn est le résultat de mon premier Gamejam en équipe organisé au collège de Valleyfield et où nous avons remporté la deuxième place!</p>
@@ -224,17 +224,17 @@ export class ProjetsManager {
                         <p>L’utilisateur peut contrôler une caméra pour se déplacer et visualiser la génération du terrain. Il a également le choix de personnaliser la génération du terrain. </p>
                     </div>
                     <div>
-                        <p>Mon but était de montrer que je suis capable de programmer l’affichage de graphiques sans support autre qu’OpenGL et LWJGL qui sont de bien plus bas niveau que Unity qui offre déjà le rendu d’objets 3D, de textures, d’effets visuels complexes et plus.</p>
+                        <p>Mon but était d'apprendre les bases de la programmation d'un moteur de jeu sans support autre qu’OpenGL et LWJGL qui sont de bien plus bas niveau qu'Unity qui offre déjà le rendu d’objets 3D, de textures, d’effets visuels complexes et plus.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_02.png" alt="">
                     <div>
                         <p>J'ai suivi beaucoup de tutoriels différents pour arriver à ce résultat dont <a href="https://www.youtube.com/user/ThinMatrix">ThinMatrix</a> qui en est la source principale. J'ai vraiment beaucoup appris dans la façon dont un projet doit être structuré en Java en orienté objet.</p>
                     </div>
                     <div>
-                        <p>Par exemple, il y a la classe Entity qui s'occupe du rendu de celui-ci en appelant des méthodes du moteur de rendu qui est lui aussi divisé en plusieurs classes. Toutes mes classes sont encapsulées pour empêcher le programmeur de devoir comprendre tout ce qui se passe en arrière.</p>
+                        <p>Les classes sont encapsulées et les communications entre elles se font généralement par une interface afin de respecter les principes de base de l'orienté objet afin d'éviter le couplage.</p>
                     </div>
                     <div>
-                        <p>Ce que je trouve le plus intéressant avec mon projet, c'est aussi qu'il est presque modulaire dans le sens où je peux le reprendre et l'utiliser comme un moteur de jeu personnalisé.</p>
+                        <p>Ce projet est également intéressant, car il me permettra dans le futur de créer des jeux ou d'être une grande inspiration pour un moteur de jeu.</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_03.png" alt="">
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_04.png" alt="">
@@ -250,11 +250,11 @@ export class ProjetsManager {
                     <h1>Défends ton château!</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Voici un jeu que j'ai créé avec Unity dans mes temps libres. Vous avez volé la première copie d'un jeu tant attendu par les fans, Half-Life 3! Vous vous êtes ainsi mis toute la terre à dos! Vous décidez donc de vous réfugier dans le château de votre défunt oncle afin défendre chèrement votre peau!</p>
+                        <p>Vous avez volé la première copie d'un jeu tant attendu par les fans, Half-Life 3! Vous vous êtes ainsi mis toute la terre à dos! Vous décidez donc de vous réfugier dans le château de votre défunt oncle afin de défendre chèrement votre peau!</p>
                     </div>
                     <img src="images/projets/projet${idCompte+1}/p${idCompte+1}_01.png" alt="">
                     <div>
-                        <p>Défendez votre château afin de survivre aux vagues d'ennemis de plus en plus nombreux, rapides et forts à l'aide de vos pouvoirs et de votre souris qui vous permet de tuer les ennemis en les envoyant en l'air pour qu'ils s'écrasent ensuite violemment au sol!</p>
+                        <p>Défendez votre château face aux ennemis de plus en plus nombreux, rapides et forts. Utilisez votre souris afin de détruire les ennemis en les envoyant en l'air pour qu'ils s'écrasent ensuite violemment au sol!</p>
                     </div>
                 </div>
             `,
@@ -268,16 +268,13 @@ export class ProjetsManager {
                     <h1>Deadly Nightmare</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Deadly Nightmare est le résultat d'un Travail Pratique dans le cours de programmation d'animation 2 en Techniques d'intégration multimédia. Le jeu est fait avec Unity et C#. J'ai programmé la majorité des fonctionnalitées et mon collègue s'est occupé de l'architecture du niveau et de la modélisation.</p>
+                        <p>Deadly Nightmare est le résultat d'un Travail Pratique dans le cours de programmation d'animation 2 en Techniques d'Intégration Multimédia. Le jeu est fait avec Unity et C#. J'ai programmé la majorité des fonctionnalitées et mon collègue s'est occupé de l'architecture du niveau et de la modélisation.</p>
                     </div>
                     <div>
-                        <p>Mon but en produisant ce jeu était de voir si j'était capable de programmer une système de fusils dynamiques et amusant. Je crois avoir bien réussi le défi, car quand je joue à Deadly Nightmare, j'ai l'impression de jouer à un Call of Duty en mode Zombie.</p>
-                    </div>
-                    <div>
-                        <p>J'ai aussi programmé un système de difficulté pour l'apparition des zombies, l'interaction avec les portes, l'achat des armes et aussi le démembrement des zombies.</p>
+                        <p>Voici quelques systèmes que j'ai créés: Créateur d'arme uniques avec des paramètres (Recul, dégats, vitesse de rechargement, etc.) Apparition de zombies de plus en plus forts, interaction avec les portes, l'achat d'arme, démembrement des zombies.</p>
                     </di>
                     <div>
-                        <p>Bref, ce jeu m'a surtout fait comprendre ce que je pouvais faire sur Unity en 3D et ce fût une expérience enrichissante pour apprendre de mes erreurs.</p>
+                        <p>Ce projet fut une expérience enrichissante afin de mieux comprendre la partie 3D d'Unity et le travail à deux dans un même projet.</p>
                     </div>
                 </div>
             `,
@@ -291,7 +288,7 @@ export class ProjetsManager {
                     <h1>Gladiatorio.fun</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Gladiatorio est un prototype de jeu fonctionnel de combat en arena. il est programmé en Javascript avec la librairie Phaser. Le serveur est écrit en NodeJS (Javascript).</p>
+                        <p>Gladiatorio est un prototype de jeu qui simule du combat de style arcade dans un Colisée. Programmé en Javascript avec la librairie Phaser, le projet utilise un serveur écrit en NodeJS (Javascript) afin de synchroniser les joueurs.</p>
                     </div>
                     <div>
                         <p>Vous pouvez y jouer ici si vous êtes au moins deux personne: <a href=http://gladiatorio.fun>gladiatorio.fun</a>. Avec les touches 1-2-3 vous pouvez changer d'arme et vous pouvez frapper les autres joueurs avec la souris.</p>
@@ -308,10 +305,10 @@ export class ProjetsManager {
                     <h1>Woodie clone</h1>
                     <img src="images/projets/apercuProjet${idCompte+1}.png" alt="">
                     <div>
-                        <p>Ce jeu est une copie d'un jeu de l'app store nommé Woodie. Il à été programmé entièrement en Javascript sans l'utilisation de librairies externes. Le but est de survivre le plus longtemps possible en faisant éclater des colonnes et des rangées de pièces.</p>
+                        <p>Ce projet est une copie d'un jeu de l'app store nommé Woodie. Il à été programmé entièrement en Javascript sans l'utilisation de librairies externes. Le but est de survivre le plus longtemps possible en faisant éclater des colonnes et des rangées de pièces.</p>
                     </div>
                     <div>
-                        <p>Vous pouvez y jouer ici: <a href="https://william-games.herokuapp.com/woodie.html">woodie clone</a></p>
+                        <p>Vous pouvez y jouer ici: <a href="https://william-games.herokuapp.com/woodie.html">Woodie clone</a></p>
                     </div>
                 </div>
             `,
